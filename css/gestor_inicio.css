@@ -1,11 +1,13 @@
 .title{
   margin-left: 20px;
   margin-top: 20px;
+  text-align: center;
 }
 h2{
-color:#FF7F50;
+color:#ffa500;
 margin-left: 20px;
 margin-top: 10px;
+text-align: center;
 
 }
 .boton_personalizado{
@@ -13,8 +15,8 @@ margin-top: 10px;
     padding: 10px;
     font-weight: 600;
     font-size: 20px;
-    color: #ffffff;
-    background-color: 	#F0E68C;
+    color: #B2B2AD;
+    background-color: #ffffff	;
     border-radius: 6px;
     border: 2px solid #DAA520;
     margin-top: 60px;
@@ -23,11 +25,11 @@ margin-top: 10px;
 }
 .boton_personalizado:hover{
     color: 		#696969;
-    background-color: #ffffff;
+    background-color: #A2A2A1;
     text-decoration:none;
 }
 .padre {
-    background: #FFFFC5;
+    background: #DEDED7;
     height: 480px;
     display: flex;
     justify-content: center;
@@ -35,6 +37,6 @@ margin-top: 10px;
   }
   
   .hijo {
-    background:#FF7F50;
+    background:#A2A2A1;
     width: 300px;
   }
