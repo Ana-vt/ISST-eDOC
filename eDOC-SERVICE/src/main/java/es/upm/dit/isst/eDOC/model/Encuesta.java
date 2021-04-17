@@ -15,36 +15,127 @@ public class Encuesta implements Serializable {
 	private boolean Entregada;
 	private char Asignatura;
 	private int fk_Resultado;
-	private String Pregunta_Test1;
+	
 	private double Respuesta_Test1;
-	private String Pregunta_Test2;
+	
 	private double Respuesta_Test2;
-	private String Pregunta_Test3;
+	
 	private double Respuesta_Test3;
-	private String Pregunta_Test4;
+	
 	private double Respuesta_Test4;
-	private String Pregunta_Test5;
+	
 	private double Respuesta_Test5;
-	private String Pregunta_Test6;
+	
 	private double Respuesta_Test6;
-	private String Pregunta_Test7;
+	
 	private double Respuesta_Test7;
-	private String Pregunta_Test8;
+	
 	private double Respuesta_Test8;
-	private String Pregunta_Test9;
+	
 	private double Respuesta_Test9;
-	private String Pregunta_Test10;
+	
 	private double Respuesta_Test10;
-	private String Pregunta_Test11;
+	
 	private double Respuesta_Test11;
-	private String Pregunta_Test12;
+	
 	private double Respuesta_Test12;
-	private String Pregunta_Test13;
+	
 	private double Respuesta_Test13;
-	private String Pregunta_Test14;
+	
 	private double Respuesta_Test14;
-	private String Pregunta_Test15;
+	
 	private double Respuesta_Test15;
+	
+	private double Respuesta_Test16;
+	
+	private double Respuesta_Test17;
+	
+	private double Respuesta_Test18;
+	
+	private double Respuesta_Test19;
+	
+	private double Respuesta_Test20;
+	
+	private double Respuesta_Test21;
+	
+	private double Respuesta_Test22;
+	
+	private double Respuesta_Test23;
+	
+	private double Respuesta_Test24;
+	
+	public double getRespuesta_Test16() {
+		return Respuesta_Test16;
+	}
+
+	public void setRespuesta_Test16(double respuesta_Test16) {
+		Respuesta_Test16 = respuesta_Test16;
+	}
+
+	public double getRespuesta_Test17() {
+		return Respuesta_Test17;
+	}
+
+	public void setRespuesta_Test17(double respuesta_Test17) {
+		Respuesta_Test17 = respuesta_Test17;
+	}
+
+	public double getRespuesta_Test18() {
+		return Respuesta_Test18;
+	}
+
+	public void setRespuesta_Test18(double respuesta_Test18) {
+		Respuesta_Test18 = respuesta_Test18;
+	}
+
+	public double getRespuesta_Test19() {
+		return Respuesta_Test19;
+	}
+
+	public void setRespuesta_Test19(double respuesta_Test19) {
+		Respuesta_Test19 = respuesta_Test19;
+	}
+
+	public double getRespuesta_Test20() {
+		return Respuesta_Test20;
+	}
+
+	public void setRespuesta_Test20(double respuesta_Test20) {
+		Respuesta_Test20 = respuesta_Test20;
+	}
+
+	public double getRespuesta_Test21() {
+		return Respuesta_Test21;
+	}
+
+	public void setRespuesta_Test21(double respuesta_Test21) {
+		Respuesta_Test21 = respuesta_Test21;
+	}
+
+	public double getRespuesta_Test22() {
+		return Respuesta_Test22;
+	}
+
+	public void setRespuesta_Test22(double respuesta_Test22) {
+		Respuesta_Test22 = respuesta_Test22;
+	}
+
+	public double getRespuesta_Test23() {
+		return Respuesta_Test23;
+	}
+
+	public void setRespuesta_Test23(double respuesta_Test23) {
+		Respuesta_Test23 = respuesta_Test23;
+	}
+
+	public double getRespuesta_Test24() {
+		return Respuesta_Test24;
+	}
+
+	public void setRespuesta_Test24(double respuesta_Test24) {
+		Respuesta_Test24 = respuesta_Test24;
+	}
+
 	@Lob
 	private String Respuesta_Texto;
 	
@@ -214,29 +305,12 @@ public class Encuesta implements Serializable {
 		return serialVersionUID;
 	}
 
-	
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + Asignatura;
 		result = prime * result + (Entregada ? 1231 : 1237);
-		result = prime * result + ((Pregunta_Test1 == null) ? 0 : Pregunta_Test1.hashCode());
-		result = prime * result + ((Pregunta_Test10 == null) ? 0 : Pregunta_Test10.hashCode());
-		result = prime * result + ((Pregunta_Test11 == null) ? 0 : Pregunta_Test11.hashCode());
-		result = prime * result + ((Pregunta_Test12 == null) ? 0 : Pregunta_Test12.hashCode());
-		result = prime * result + ((Pregunta_Test13 == null) ? 0 : Pregunta_Test13.hashCode());
-		result = prime * result + ((Pregunta_Test14 == null) ? 0 : Pregunta_Test14.hashCode());
-		result = prime * result + ((Pregunta_Test15 == null) ? 0 : Pregunta_Test15.hashCode());
-		result = prime * result + ((Pregunta_Test2 == null) ? 0 : Pregunta_Test2.hashCode());
-		result = prime * result + ((Pregunta_Test3 == null) ? 0 : Pregunta_Test3.hashCode());
-		result = prime * result + ((Pregunta_Test4 == null) ? 0 : Pregunta_Test4.hashCode());
-		result = prime * result + ((Pregunta_Test5 == null) ? 0 : Pregunta_Test5.hashCode());
-		result = prime * result + ((Pregunta_Test6 == null) ? 0 : Pregunta_Test6.hashCode());
-		result = prime * result + ((Pregunta_Test7 == null) ? 0 : Pregunta_Test7.hashCode());
-		result = prime * result + ((Pregunta_Test8 == null) ? 0 : Pregunta_Test8.hashCode());
-		result = prime * result + ((Pregunta_Test9 == null) ? 0 : Pregunta_Test9.hashCode());
 		long temp;
 		temp = Double.doubleToLongBits(Respuesta_Test1);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
@@ -252,7 +326,25 @@ public class Encuesta implements Serializable {
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		temp = Double.doubleToLongBits(Respuesta_Test15);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(Respuesta_Test16);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(Respuesta_Test17);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(Respuesta_Test18);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(Respuesta_Test19);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		temp = Double.doubleToLongBits(Respuesta_Test2);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(Respuesta_Test20);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(Respuesta_Test21);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(Respuesta_Test22);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(Respuesta_Test23);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(Respuesta_Test24);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		temp = Double.doubleToLongBits(Respuesta_Test3);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
@@ -287,81 +379,6 @@ public class Encuesta implements Serializable {
 			return false;
 		if (Entregada != other.Entregada)
 			return false;
-		if (Pregunta_Test1 == null) {
-			if (other.Pregunta_Test1 != null)
-				return false;
-		} else if (!Pregunta_Test1.equals(other.Pregunta_Test1))
-			return false;
-		if (Pregunta_Test10 == null) {
-			if (other.Pregunta_Test10 != null)
-				return false;
-		} else if (!Pregunta_Test10.equals(other.Pregunta_Test10))
-			return false;
-		if (Pregunta_Test11 == null) {
-			if (other.Pregunta_Test11 != null)
-				return false;
-		} else if (!Pregunta_Test11.equals(other.Pregunta_Test11))
-			return false;
-		if (Pregunta_Test12 == null) {
-			if (other.Pregunta_Test12 != null)
-				return false;
-		} else if (!Pregunta_Test12.equals(other.Pregunta_Test12))
-			return false;
-		if (Pregunta_Test13 == null) {
-			if (other.Pregunta_Test13 != null)
-				return false;
-		} else if (!Pregunta_Test13.equals(other.Pregunta_Test13))
-			return false;
-		if (Pregunta_Test14 == null) {
-			if (other.Pregunta_Test14 != null)
-				return false;
-		} else if (!Pregunta_Test14.equals(other.Pregunta_Test14))
-			return false;
-		if (Pregunta_Test15 == null) {
-			if (other.Pregunta_Test15 != null)
-				return false;
-		} else if (!Pregunta_Test15.equals(other.Pregunta_Test15))
-			return false;
-		if (Pregunta_Test2 == null) {
-			if (other.Pregunta_Test2 != null)
-				return false;
-		} else if (!Pregunta_Test2.equals(other.Pregunta_Test2))
-			return false;
-		if (Pregunta_Test3 == null) {
-			if (other.Pregunta_Test3 != null)
-				return false;
-		} else if (!Pregunta_Test3.equals(other.Pregunta_Test3))
-			return false;
-		if (Pregunta_Test4 == null) {
-			if (other.Pregunta_Test4 != null)
-				return false;
-		} else if (!Pregunta_Test4.equals(other.Pregunta_Test4))
-			return false;
-		if (Pregunta_Test5 == null) {
-			if (other.Pregunta_Test5 != null)
-				return false;
-		} else if (!Pregunta_Test5.equals(other.Pregunta_Test5))
-			return false;
-		if (Pregunta_Test6 == null) {
-			if (other.Pregunta_Test6 != null)
-				return false;
-		} else if (!Pregunta_Test6.equals(other.Pregunta_Test6))
-			return false;
-		if (Pregunta_Test7 == null) {
-			if (other.Pregunta_Test7 != null)
-				return false;
-		} else if (!Pregunta_Test7.equals(other.Pregunta_Test7))
-			return false;
-		if (Pregunta_Test8 == null) {
-			if (other.Pregunta_Test8 != null)
-				return false;
-		} else if (!Pregunta_Test8.equals(other.Pregunta_Test8))
-			return false;
-		if (Pregunta_Test9 == null) {
-			if (other.Pregunta_Test9 != null)
-				return false;
-		} else if (!Pregunta_Test9.equals(other.Pregunta_Test9))
-			return false;
 		if (Double.doubleToLongBits(Respuesta_Test1) != Double.doubleToLongBits(other.Respuesta_Test1))
 			return false;
 		if (Double.doubleToLongBits(Respuesta_Test10) != Double.doubleToLongBits(other.Respuesta_Test10))
@@ -376,7 +393,25 @@ public class Encuesta implements Serializable {
 			return false;
 		if (Double.doubleToLongBits(Respuesta_Test15) != Double.doubleToLongBits(other.Respuesta_Test15))
 			return false;
+		if (Double.doubleToLongBits(Respuesta_Test16) != Double.doubleToLongBits(other.Respuesta_Test16))
+			return false;
+		if (Double.doubleToLongBits(Respuesta_Test17) != Double.doubleToLongBits(other.Respuesta_Test17))
+			return false;
+		if (Double.doubleToLongBits(Respuesta_Test18) != Double.doubleToLongBits(other.Respuesta_Test18))
+			return false;
+		if (Double.doubleToLongBits(Respuesta_Test19) != Double.doubleToLongBits(other.Respuesta_Test19))
+			return false;
 		if (Double.doubleToLongBits(Respuesta_Test2) != Double.doubleToLongBits(other.Respuesta_Test2))
+			return false;
+		if (Double.doubleToLongBits(Respuesta_Test20) != Double.doubleToLongBits(other.Respuesta_Test20))
+			return false;
+		if (Double.doubleToLongBits(Respuesta_Test21) != Double.doubleToLongBits(other.Respuesta_Test21))
+			return false;
+		if (Double.doubleToLongBits(Respuesta_Test22) != Double.doubleToLongBits(other.Respuesta_Test22))
+			return false;
+		if (Double.doubleToLongBits(Respuesta_Test23) != Double.doubleToLongBits(other.Respuesta_Test23))
+			return false;
+		if (Double.doubleToLongBits(Respuesta_Test24) != Double.doubleToLongBits(other.Respuesta_Test24))
 			return false;
 		if (Double.doubleToLongBits(Respuesta_Test3) != Double.doubleToLongBits(other.Respuesta_Test3))
 			return false;
@@ -407,21 +442,27 @@ public class Encuesta implements Serializable {
 	@Override
 	public String toString() {
 		return "Encuesta [id=" + id + ", Entregada=" + Entregada + ", Asignatura=" + Asignatura + ", fk_Resultado="
-				+ fk_Resultado + ", Pregunta_Test1=" + Pregunta_Test1 + ", Respuesta_Test1=" + Respuesta_Test1
-				+ ", Pregunta_Test2=" + Pregunta_Test2 + ", Respuesta_Test2=" + Respuesta_Test2 + ", Pregunta_Test3="
-				+ Pregunta_Test3 + ", Respuesta_Test3=" + Respuesta_Test3 + ", Pregunta_Test4=" + Pregunta_Test4
-				+ ", Respuesta_Test4=" + Respuesta_Test4 + ", Pregunta_Test5=" + Pregunta_Test5 + ", Respuesta_Test5="
-				+ Respuesta_Test5 + ", Pregunta_Test6=" + Pregunta_Test6 + ", Respuesta_Test6=" + Respuesta_Test6
-				+ ", Pregunta_Test7=" + Pregunta_Test7 + ", Respuesta_Test7=" + Respuesta_Test7 + ", Pregunta_Test8="
-				+ Pregunta_Test8 + ", Respuesta_Test8=" + Respuesta_Test8 + ", Pregunta_Test9=" + Pregunta_Test9
-				+ ", Respuesta_Test9=" + Respuesta_Test9 + ", Pregunta_Test10=" + Pregunta_Test10
-				+ ", Respuesta_Test10=" + Respuesta_Test10 + ", Pregunta_Test11=" + Pregunta_Test11
-				+ ", Respuesta_Test11=" + Respuesta_Test11 + ", Pregunta_Test12=" + Pregunta_Test12
-				+ ", Respuesta_Test12=" + Respuesta_Test12 + ", Pregunta_Test13=" + Pregunta_Test13
-				+ ", Respuesta_Test13=" + Respuesta_Test13 + ", Pregunta_Test14=" + Pregunta_Test14
-				+ ", Respuesta_Test14=" + Respuesta_Test14 + ", Pregunta_Test15=" + Pregunta_Test15
-				+ ", Respuesta_Test15=" + Respuesta_Test15 + ", Respuesta_Texto=" + Respuesta_Texto + "]";
+				+ fk_Resultado + ", Respuesta_Test1=" + Respuesta_Test1 + ", Respuesta_Test2=" + Respuesta_Test2
+				+ ", Respuesta_Test3=" + Respuesta_Test3 + ", Respuesta_Test4=" + Respuesta_Test4 + ", Respuesta_Test5="
+				+ Respuesta_Test5 + ", Respuesta_Test6=" + Respuesta_Test6 + ", Respuesta_Test7=" + Respuesta_Test7
+				+ ", Respuesta_Test8=" + Respuesta_Test8 + ", Respuesta_Test9=" + Respuesta_Test9
+				+ ", Respuesta_Test10=" + Respuesta_Test10 + ", Respuesta_Test11=" + Respuesta_Test11
+				+ ", Respuesta_Test12=" + Respuesta_Test12 + ", Respuesta_Test13=" + Respuesta_Test13
+				+ ", Respuesta_Test14=" + Respuesta_Test14 + ", Respuesta_Test15=" + Respuesta_Test15
+				+ ", Respuesta_Test16=" + Respuesta_Test16 + ", Respuesta_Test17=" + Respuesta_Test17
+				+ ", Respuesta_Test18=" + Respuesta_Test18 + ", Respuesta_Test19=" + Respuesta_Test19
+				+ ", Respuesta_Test20=" + Respuesta_Test20 + ", Respuesta_Test21=" + Respuesta_Test21
+				+ ", Respuesta_Test22=" + Respuesta_Test22 + ", Respuesta_Test23=" + Respuesta_Test23
+				+ ", Respuesta_Test24=" + Respuesta_Test24 + ", Respuesta_Texto=" + Respuesta_Texto + "]";
 	}
+
+	
+
+
+
+	
+
+	
 
 	
 }

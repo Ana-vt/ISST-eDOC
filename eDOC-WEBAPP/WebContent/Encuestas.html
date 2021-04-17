@@ -26,7 +26,7 @@
                   <i class="fa fa-user-circle" aria-hidden="true">  Usuario xxxx</i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="index.html"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesión</a>
+                  <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesión</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">Editar perfil</a>
                 </div>
@@ -42,7 +42,7 @@
                     <p class="text-center">Encuesta de Asignatura</p>
                 </div>
 
-                <form name="encuesta" action = "FormEncuesta" method = "get" >
+                <form name="encuesta" action = "FormEncuesta" method="post">
                     <!--  Sobre la Documentación  -->
                     <section class="row">
                         <div class="col-md-12">
@@ -52,34 +52,18 @@
                     </section>
                     <!--  PREGUNTA 1  -->
                     <section class="row">
-                        <div class="col-md-12">
+                     <div class="col-md-12">
                             <p>1- ¿Los apuntes son claros y de utilidad?</p>
                         </div>
-                        <div class="col-md-2">
-                            <label class="radio">
-                                <input type="radio" name="10" id="apuntesA" value="10"> Excelente
-                            </label>
-                        </div>
-                        <div class="col-md-2">
-                            <label class="radio">
-                                <input type="radio" name="apuntes" id="apuntesB" value="7.5"> Bueno
-                            </label>
-                        </div>
-                        <div class="col-md-2">
-                            <label class="radio">
-                                <input type="radio" name="apuntes" id="apuntesC" value="5"> Regular
-                            </label>
-                        </div>
-                        <div class="col-md-2">
-                            <label class="radio">
-                                <input type="radio" name="apuntes" id="apuntesD" value="2.5"> Mala
-                            </label>
-                        </div>
-                        <div class="col-md-2">
-                            <label class="radio">
-                                <input type="radio" name="apuntes" id="apuntesE" value="0"> Muy Mala
-                            </label>
-                        </div>
+
+                         <select name="apuntes">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
                     </section>
                     <br>
                     <!--  PREGUNTA 2  -->
@@ -87,31 +71,15 @@
                         <div class="col-md-12">
                             <p>2- ¿La bibliografía recomendada es accesible y de utilidad?</p>
                         </div>
-                        <div class="col-md-2">
-                            <label class="radio">
-                                <input type="radio" name="bibliografia" id="bibliografiaA" value="10"> Excelente
-                            </label>
-                        </div>
-                        <div class="col-md-2">
-                            <label class="radio">
-                                <input type="radio" name="bibliografia" id="bibliografiaB" value="7.5"> Bueno
-                            </label>
-                        </div>
-                        <div class="col-md-2">
-                            <label class="radio">
-                                <input type="radio" name="bibliografia" id="bibliografíaC" value="5"> Regular
-                            </label>
-                        </div>
-                        <div class="col-md-2">
-                            <label class="radio">
-                                <input type="radio" name="bibliografia" id="bibliografíaD" value="2.5"> Mala
-                            </label>
-                        </div>
-                        <div class="col-md-2">
-                            <label class="radio">
-                                <input type="radio" name="bibliografia" id="bibliografíaE" value="0"> Muy Mala
-                            </label>
-                        </div>
+                        
+                         <select  name="bibliografia">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
                     </section>
                     <br><hr>
                     <!--  Sobre las pruebas de evaluación  -->
@@ -121,166 +89,166 @@
                           <p></p>
                       </div>
                   </section>
-                  <!--  PREGUNTA 3  -->
-                  <section class="row">
-                    <div class="col-md-12">
-                        <p>3- ¿El esfuerzo que lleva realizar las prácticas es el esperado para esta asignatura?</p>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="practicas" id="practicasA" value="10"> Excelente
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="practicas" id="practicasB" value="7.5"> Bueno
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="practicas" id="practicasC" value="5"> Regular
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="practicas" id="practicasD" value="2.5"> Mala
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="practicas" id="practicasE" value="0"> Muy Mala
-                        </label>
-                    </div>
-                </section>
-                <br>
-                <!--  PREGUNTA 4  -->
+                <!--  PREGUNTA 3  -->
                 <section class="row">
                   <div class="col-md-12">
-                      <p>4- ¿El esfuerzo que lleva realizar los trabajos es el esperado para esta asignatura?</p>
+                      <p>3- ¿El esfuerzo que lleva realizar las prácticas y los trabajos es el esperado para esta asignatura?</p>
                   </div>
-                  <div class="col-md-2">
-                      <label class="radio">
-                          <input type="radio" name="trabajos" id="trabajosA" value="10"> Excelente
-                      </label>
-                  </div>
-                  <div class="col-md-2">
-                      <label class="radio">
-                          <input type="radio" name="trabajos" id="trabajosB" value="7.5"> Bueno
-                      </label>
-                  </div>
-                  <div class="col-md-2">
-                      <label class="radio">
-                          <input type="radio" name="trabajos" id="trabajosC" value="5"> Regular
-                      </label>
-                  </div>
-                  <div class="col-md-2">
-                      <label class="radio">
-                          <input type="radio" name="trabajos" id="trabajosD" value="2.5"> Mala
-                      </label>
-                  </div>
-                  <div class="col-md-2">
-                      <label class="radio">
-                          <input type="radio" name="trabajos" id="trabajosE" value="0"> Muy Mala
-                      </label>
-                  </div>
+                  <select  name="trabajos">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
               </section>
               <br>
-                  <!--  PREGUNTA 5  -->
+                  <!--  PREGUNTA 4  -->
                   <section class="row">
                     <div class="col-md-12">
-                        <p>5- ¿El esfuerzo que lleva realizar los exámenes es el esperado para esta asignatura?</p>
+                        <p>4- ¿El esfuerzo que lleva realizar los exámenes es el esperado para esta asignatura?</p>
                     </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="examenes" id="examenesA" value="10"> Excelente
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="examenes" id="examenesB" value="7.5"> Bueno
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="examenes" id="examenesC" value="5"> Regular
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="examenes" id="examenesD" value="2.5"> Mala
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="examenes" id="examenesE" value="0"> Muy Mala
-                        </label>
-                    </div>
+                    <select  name="examenes">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
                 </section>
                 <br>
-                <!--  PREGUNTA 6  -->
+                
+                <!--  PREGUNTA 5  -->
                 <section class="row">
                   <div class="col-md-12">
-                      <p>6- ¿El sistema de evaluación es adecuado?</p>
+                      <p>5- ¿El sistema de evaluación es adecuado?</p>
                   </div>
-                  <div class="col-md-2">
-                      <label class="radio">
-                          <input type="radio" name="sistema" id="sistemaA" value="10"> Excelente
-                      </label>
-                  </div>
-                  <div class="col-md-2">
-                      <label class="radio">
-                          <input type="radio" name="sistema" id="sistemaB" value="7.5"> Bueno
-                      </label>
-                  </div>
-                  <div class="col-md-2">
-                      <label class="radio">
-                          <input type="radio" name="sistema" id="sistemaC" value="5"> Regular
-                      </label>
-                  </div>
-                  <div class="col-md-2">
-                      <label class="radio">
-                          <input type="radio" name="sistema" id="sistemaD" value="2.5"> Mala
-                      </label>
-                  </div>
-                  <div class="col-md-2">
-                      <label class="radio">
-                          <input type="radio" name="sistema" id="sistemaE" value="0"> Muy Mala
-                      </label>
-                  </div>
+                   <select  name="sistema">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
               </section>
               <br>
-              <!--  PREGUNTA 7  -->
+              <!--  PREGUNTA 6  -->
               <section class="row">
                 <div class="col-md-12">
-                    <p>7- ¿El esfuerzo necesario para aprobar es adecuado?</p>
+                    <p>6- ¿El esfuerzo necesario para aprobar es adecuado?</p>
                 </div>
                 <div class="col-md-2">
-                    <label class="radio">
-                        <input type="radio" name="esfuerzo" id="esfuerzoA" value="10"> Excelente
-                    </label>
-                </div>
-                <div class="col-md-2">
-                    <label class="radio">
-                        <input type="radio" name="esfuerzo" id="esfuerzoB" value="7.5"> Bueno
-                    </label>
-                </div>
-                <div class="col-md-2">
-                    <label class="radio">
-                        <input type="radio" name="esfuerzo" id="esfuerzoC" value="5"> Regular
-                    </label>
-                </div>
-                <div class="col-md-2">
-                    <label class="radio">
-                        <input type="radio" name="esfuerzo" id="esfuerzoD" value="2.5"> Mala
-                    </label>
-                </div>
-                <div class="col-md-2">
-                    <label class="radio">
-                        <input type="radio" name="esfuerzo" id="esfuerzoE" value="0"> Muy Mala
-                    </label>
-                </div>
+                <select  name="esfuerzo">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
             </section>
                   <br><hr>
+                  <!--  Sobre su propia labor como estudiante  -->
+                  <section class="row">
+                    <div class="col-md-12">
+                        <h3>Sobre su propia labor como estudiante</h3>
+                        <p></p>
+                    </div>
+                </section>
+                <!--  PREGUNTA 7  -->
+                <section class="row">
+                  <div class="col-md-12">
+                      <p>7- ¿Asisto a las actividades docentes diariamente?</p>
+                  </div>
+                  <select  name="asistencia">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
+              </section>
+              <br>
+              <!--  PREGUNTA 8  -->
+              <section class="row">
+                <div class="col-md-12">
+                    <p>8- ¿Llevo al día el estudio de esta asignatura?</p>
+                </div>
+                <select  name="dia">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
+            </section>
+            <br>
+            <!--  PREGUNTA 9  -->
+            <section class="row">
+                <div class="col-md-12">
+                    <p>9- ¿Resuelvo mis dudas en tutorías?</p>
+                </div>
+               <select  name="tutoria">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
+            </section>
+            <br>
+            <!--  PREGUNTA 10  -->
+            <section class="row">
+                <div class="col-md-12">
+                    <p>10- ¿Considero interesante esta asignatura para mi formación?</p>
+                </div>
+                 <select  name="interesante">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
+            </section>
+            <br>
+                <!--  PREGUNTA 11  -->
+            <section class="row">
+                <div class="col-md-12">
+                    <p>11- ¿Considero mi preparación previa adecuada para seguir esta asignatura?</p>
+                </div>
+                <select  name="preparacion">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
+            </section>
+            <br>
+              <!--  PREGUNTA 12  -->
+            <section class="row">
+                <div class="col-md-12">
+                    <p>12- ¿La calificación obtenida se ajusta a los conocimientos demostrados?</p>
+                </div>
+               <select  name="conocimientos">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
+            </section>
+            <br>
+                <br><hr>
                     <!--  Sobre las clases  -->
                     <section class="row">
                       <div class="col-md-12">
@@ -288,68 +256,34 @@
                           <p></p>
                       </div>
                   </section>
-                  <!--  PREGUNTA 8  -->
+                  <!--  PREGUNTA 13  -->
                   <section class="row">
                     <div class="col-md-12">
-                        <p>8- ¿La distribución de horas teóricas y prácticas es adecuada?</p>
+                        <p>13- ¿La distribución de horas teóricas y prácticas es adecuada?</p>
                     </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="horas" id="horasA" value="10"> Excelente
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="horas" id="horasB" value="7.5"> Bueno
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="horas" id="horasC" value="5"> Regular
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="horas" id="horasD" value="2.5"> Mala
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="horas" id="horasE" value="0"> Muy Mala
-                        </label>
-                    </div>
+                    <select  name="horas">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
                 </section>
                 <br>
-                  <!--  PREGUNTA 9  -->
+                  <!--  PREGUNTA 14  -->
                   <section class="row">
                     <div class="col-md-12">
-                        <p>9- ¿No se han producido solapamientos con otras asignaturas?</p>
+                        <p>14- ¿No se han producido solapamientos con otras asignaturas?</p>
                     </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="solapamientosA" id="solapamientosA" value="10"> Excelente
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="solapamientos" id="solapamientosB" value="7.5"> Bueno
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="solapamientos" id="solapamientosC" value="5"> Regular
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="solapamientos" id="solapamientosD" value="2.5"> Mala
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="solapamientos" id="solapamientosE" value="0"> Muy Mala
-                        </label>
-                    </div>
+                    <select  name="solapamientos">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
                 </section>
                   <br><hr>
                     <!--  Sobre el profesorado  -->
@@ -359,165 +293,142 @@
                           <p></p>
                       </div>
                   </section>
-                  <!--  PREGUNTA 10  -->
+                  <!--  PREGUNTA 15  -->
                   <section class="row">
                     <div class="col-md-12">
-                        <p>10- ¿El profesor evalúa corretamente?</p>
+                        <p>15- ¿El profesor evalúa corretamente?</p>
                     </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="evaluacion" id="evaluacionA" value="10"> Excelente
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="evaluacion" id="evaluacionB" value="7.5"> Bueno
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="evaluacion" id="evaluacionC" value="5"> Regular
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="evaluacion" id="evaluacionD" value="2.5"> Mala
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="radio">
-                            <input type="radio" name="evaluacion" id="evaluacionE" value="0"> Muy Mala
-                        </label>
-                    </div>
+                    <select  name="evaluacion">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
                 </section>
                 <br>
-                 <!--  PREGUNTA 11  -->
+                <!--  PREGUNTA 116  -->
+                <section class="row">
+                    <div class="col-md-12">
+                        <p>16- ¿El profesor facilita la participación en clase?</p>
+                    </div>
+                    <select  name="participacion">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
+                </section>
+                <br>
+                <!--  PREGUNTA 17  -->
+                <section class="row">
+                    <div class="col-md-12">
+                        <p>17- ¿El profesor despierta mi interés por la asignatura?</p>
+                    </div>
+                   <select  name="interes">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
+                </section>
+                <br>
+                <!--  PREGUNTA 18  -->
+                <section class="row">
+                    <div class="col-md-12">
+                        <p>18- ¿El profesor cumple con la Guia de Aprendizaje de la asignatura?</p>
+                    </div>
+                    <select  name="guia">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
+                </section>
+                <br>
+                <!--  PREGUNTA 19  -->
+                <section class="row">
+                    <div class="col-md-12">
+                        <p>19- ¿El profesor se muestra accesible y disponible para los estudiantes?</p>
+                    </div>
+                    <select  name="accesible">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
+                </section>
+                <br>
+                 <!--  PREGUNTA 20  -->
                  <section class="row">
                   <div class="col-md-12">
-                      <p>11- El profesorado de la asignatura está bien coordinado?</p>
+                      <p>20- El profesorado de la asignatura está bien coordinado?</p>
                   </div>
-                  <div class="col-md-2">
-                      <label class="radio">
-                          <input type="radio" name="coordinacion" id="coordinacionA" value="10"> Excelente
-                      </label>
-                  </div>
-                  <div class="col-md-2">
-                      <label class="radio">
-                          <input type="radio" name="coordinacion" id="coordinacionB" value="7.5"> Bueno
-                      </label>
-                  </div>
-                  <div class="col-md-2">
-                      <label class="radio">
-                          <input type="radio" name="coordinacion" id="coordinacionC" value="5"> Regular
-                      </label>
-                  </div>
-                  <div class="col-md-2">
-                      <label class="radio">
-                          <input type="radio" name="coordinacion" id="coordinacionD" value="2.5"> Mala
-                      </label>
-                  </div>
-                  <div class="col-md-2">
-                      <label class="radio">
-                          <input type="radio" name="coordinacion" id="coordinacionE" value="0"> Muy Mala
-                      </label>
-                  </div>
+                  <select  name="coordinacion">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
               </section>
               <br>
-              <!--  PREGUNTA 12  -->
+              <!--  PREGUNTA 21  -->
               <section class="row">
                 <div class="col-md-12">
-                    <p>12- ¿El profesor respeta el horario de clase?</p>
+                    <p>21- ¿El profesor respeta el horario de clase?</p>
                 </div>
-                <div class="col-md-2">
-                    <label class="radio">
-                        <input type="radio" name="horario" id="horarioA" value="10"> Excelente
-                    </label>
-                </div>
-                <div class="col-md-2">
-                    <label class="radio">
-                        <input type="radio" name="horario" id="horarioB" value="7.5"> Bueno
-                    </label>
-                </div>
-                <div class="col-md-2">
-                    <label class="radio">
-                        <input type="radio" name="horario" id="horarioC" value="5"> Regular
-                    </label>
-                </div>
-                <div class="col-md-2">
-                    <label class="radio">
-                        <input type="radio" name="horario" id="horarioD" value="2.5"> Mala
-                    </label>
-                </div>
-                <div class="col-md-2">
-                    <label class="radio">
-                        <input type="radio" name="horario" id="horarioE" value="0"> Muy Mala
-                    </label>
-                </div>
+                 <select  name="horario">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
             </section>
             <br>
-            <!--  PREGUNTA 13  -->
+            <!--  PREGUNTA 22  -->
             <section class="row">
               <div class="col-md-12">
-                  <p>13- ¿El profesor explica con claridad?</p>
+                  <p>22- ¿El profesor explica con claridad?</p>
               </div>
-              <div class="col-md-2">
-                  <label class="radio">
-                      <input type="radio" name="claridad" id="claridadA" value="10"> Excelente
-                  </label>
-              </div>
-              <div class="col-md-2">
-                  <label class="radio">
-                      <input type="radio" name="claridad" id="claridadB" value="7.5"> Bueno
-                  </label>
-              </div>
-              <div class="col-md-2">
-                  <label class="radio">
-                      <input type="radio" name="claridad" id="claridadC" value="5"> Regular
-                  </label>
-              </div>
-              <div class="col-md-2">
-                  <label class="radio">
-                      <input type="radio" name="claridad" id="claridadD" value="2.5"> Mala
-                  </label>
-              </div>
-              <div class="col-md-2">
-                  <label class="radio">
-                      <input type="radio" name="claridad" id="claridadE" value="0"> Muy Mala
-                  </label>
-              </div>
+               <select  name="claridad">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
           </section>
           <br>
-          <!--  PREGUNTA 14  -->
+          <!--  PREGUNTA 23  -->
           <section class="row">
             <div class="col-md-12">
-                <p>14- ¿Considera al profesor un buen docente?</p>
+                <p>23- ¿Repetiría clase con este profesor?</p>
             </div>
-            <div class="col-md-2">
-                <label class="radio">
-                    <input type="radio" name="docente" id="docenteA" value="10"> Excelente
-                </label>
-            </div>
-            <div class="col-md-2">
-                <label class="radio">
-                    <input type="radio" name="docente" id="docenteB" value="7.5"> Bueno
-                </label>
-            </div>
-            <div class="col-md-2">
-                <label class="radio">
-                    <input type="radio" name="docente" id="docenteC" value="5"> Regular
-                </label>
-            </div>
-            <div class="col-md-2">
-                <label class="radio">
-                    <input type="radio" name="docente" id="docenteD" value="2.5"> Mala
-                </label>
-            </div>
-            <div class="col-md-2">
-                <label class="radio">
-                    <input type="radio" name="docente" id="docenteE" value="0"> Muy Mala
-                </label>
-            </div>
+              <select  name="repetir">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
         </section>
+        <br>
+        
                   <br><hr>
 
                     <!--  Satisfacción General  -->
@@ -527,36 +438,19 @@
                           <p></p>
                       </div>
                   </section>
-                  <!--  PREGUNTA 15  -->
+                  <!--  PREGUNTA 24  -->
                   <section class="row">
                       <div class="col-md-12">
-                          <p>15- ¿En general está contento con la asignatura?</p>
+                          <p>24- ¿En general, estoy satisfecho con la labor docente del profesor ?</p>
                       </div>
-                      <div class="col-md-2">
-                          <label class="radio">
-                              <input type="radio" name="satisfaccion" id="satisfaccionA" value="10"> Excelente
-                          </label>
-                      </div>
-                      <div class="col-md-2">
-                          <label class="radio">
-                              <input type="radio" name="satisfaccion" id="satisfaccionB" value="7.5"> Bueno
-                          </label>
-                      </div>
-                      <div class="col-md-2">
-                          <label class="radio">
-                              <input type="radio" name="satisfaccion" id="satisfaccionC" value="5"> Regular
-                          </label>
-                      </div>
-                      <div class="col-md-2">
-                          <label class="radio">
-                              <input type="radio" name="satisfaccion" id="satisfaccionD" value="2.5"> Mala
-                          </label>
-                      </div>
-                      <div class="col-md-2">
-                          <label class="radio">
-                              <input type="radio" name="satisfaccion" id="satisfaccionE" value="0"> Muy Mala
-                          </label>
-                      </div>
+                      <select  name="satisfaccion">
+                    <option value="10 ">10 </option>
+                    <option value="7.5" >7.5</option>
+                    <option value="7.5" >5</option>
+                    <option value="2.5" >2.5</option>
+		 			<option value="0" >0</option>
+
+                  </select>
 
                   </section>
                   <br />
@@ -571,7 +465,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label class="comment">Comentarios:</label>
-                                <textarea class="form-control" rows="6" id="comentarios" name ="texto" ></textarea>
+                                <textarea name = "texto" class="form-control" rows="6" id="comentarios"></textarea>
                             </div>
                         </div>
                         <div class="terms">
