@@ -5,7 +5,7 @@
 <hibernate-configuration>
         <session-factory>
                 <property name="connection.driver_class">org.h2.Driver</property>
-                <property name="connection.url">jdbc:h2:tcp://localhost/~/prueba</property>
+                <property name="connection.url">jdbc:h2:tcp://localhost/~/Grupo20</property>
                 <property name="connection.username">sa</property>
                 <property name="connection.password">sa</property>
                 <property name="connection.pool_size">5</property>
@@ -14,5 +14,8 @@
                 <property name="show_sql">true</property>
                 <property name="hbm2ddl.auto">update</property>
                 <mapping class="es.upm.dit.isst.eDOC.model.Encuesta"/>
+                <mapping class="es.upm.dit.isst.eDOC.model.Asignatura"/>
+                <mapping class="es.upm.dit.isst.eDOC.model.Usuario"/>
+                <mapping class="es.upm.dit.isst.eDOC.model.Grupo"/>
         </session-factory>
 </hibernate-configuration>

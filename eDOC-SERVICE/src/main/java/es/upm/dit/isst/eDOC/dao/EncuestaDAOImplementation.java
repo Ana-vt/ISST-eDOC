@@ -1,11 +1,14 @@
 package es.upm.dit.isst.eDOC.dao;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.hibernate.Session;
 
+import es.upm.dit.isst.eDOC.model.Asignatura;
 import es.upm.dit.isst.eDOC.model.Encuesta;
+import es.upm.dit.isst.eDOC.model.Grupo;
 
 
 public class EncuestaDAOImplementation implements EncuestaDAO {
@@ -73,8 +76,9 @@ public class EncuestaDAOImplementation implements EncuestaDAO {
 		return encuestas;
 	}
 
+	/*
 	@Override
-	public List<Encuesta> readAll(char asignatura) {
+	public List<Encuesta> readAll_asignatura (Asignatura asignatura) {
 		List<Encuesta> res = new ArrayList<Encuesta>();
 		for (Encuesta encuesta : this.readAll())
 			if (encuesta.getAsignatura() == (asignatura))
@@ -82,6 +86,15 @@ public class EncuestaDAOImplementation implements EncuestaDAO {
 		return res;
 	}
 	
+	@Override
+	public List<Encuesta> readAll_grupo(Grupo grupo) {
+		List<Encuesta> res = new ArrayList<Encuesta>();
+		for (Encuesta encuesta : this.readAll())
+			if (encuesta.getGrupo() == (grupo))
+				res.add(encuesta);
+		return res;
+	}
 	
+	*/
 
 }

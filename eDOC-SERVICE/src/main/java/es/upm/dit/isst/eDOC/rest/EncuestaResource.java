@@ -15,7 +15,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import es.upm.dit.isst.eDOC.dao.EncuestaDAOImplementation;
+import es.upm.dit.isst.eDOC.model.Asignatura;
 import es.upm.dit.isst.eDOC.model.Encuesta;
+import es.upm.dit.isst.eDOC.model.Grupo;
 
 @Path("/Encuestas")
 public class EncuestaResource {
@@ -25,14 +27,22 @@ public class EncuestaResource {
 	public List<Encuesta> readAll () {
 	     return EncuestaDAOImplementation.getInstance().readAll();
 	}
-		
+	
+	/*
 	@GET
 	@Path("asignatura/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Encuesta> readAll (@PathParam("id") char id) {
-	   return EncuestaDAOImplementation.getInstance().readAll(id);
+	public List<Encuesta> readAll_asignatura (@PathParam("id") Asignatura id) {
+	   return EncuestaDAOImplementation.getInstance().readAll_asignatura(id);
 	}
 	
+	@GET
+	@Path("asignatura/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Encuesta> readAll_grupo (@PathParam("id") Grupo id) {
+	   return EncuestaDAOImplementation.getInstance().readAll_grupo(id);
+	}
+	*/
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response create(Encuesta tnew) throws URISyntaxException {
@@ -46,7 +56,7 @@ public class EncuestaResource {
 	
 	@DELETE
     @Path("{id}")
-    public Response delete(@PathParam("id") char  id) {
+    public Response delete(@PathParam("id") int  id) {
         Encuesta rold = EncuestaDAOImplementation.getInstance().read(id);
         if (rold == null)
             return Response.notModified().build();
