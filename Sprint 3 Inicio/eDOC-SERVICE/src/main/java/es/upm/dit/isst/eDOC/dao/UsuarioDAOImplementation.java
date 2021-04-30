@@ -75,7 +75,7 @@ public class UsuarioDAOImplementation implements UsuarioDAO {
 	}
 
 	@Override
-	public List<Usuario> readAll(String rol) {
+	public List<Usuario> readAll_rol (String rol) {
 		List<Usuario> res = new ArrayList<Usuario>();
 		for (Usuario usuario : this.readAll())
 			if (usuario.getRol() == (rol))

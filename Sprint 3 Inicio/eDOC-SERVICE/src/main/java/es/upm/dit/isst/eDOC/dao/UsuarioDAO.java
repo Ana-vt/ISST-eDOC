@@ -11,6 +11,6 @@ public interface UsuarioDAO {
 	public Usuario update(Usuario usuario);
 	public Usuario delete(Usuario usuario);
 	public List<Usuario> readAll();
-	public List<Usuario> readAll(String rol); //para leer los usuarios por rol.
+	public List<Usuario> readAll_rol(String rol); //para leer los usuarios por rol.
 
 }

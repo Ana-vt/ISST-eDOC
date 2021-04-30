@@ -11,6 +11,6 @@ public interface AsignaturaDAO {
 	public Asignatura update(Asignatura asignatura);
 	public Asignatura delete(Asignatura asignatura);
 	public List<Asignatura> readAll();
-	public List<Asignatura> readAll(int curso); 
+	public List<Asignatura> readAll_curso(int curso); 
 
 }

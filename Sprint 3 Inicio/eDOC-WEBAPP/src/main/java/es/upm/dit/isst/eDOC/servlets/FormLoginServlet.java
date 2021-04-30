@@ -14,6 +14,8 @@ import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 
 import org.glassfish.jersey.client.ClientConfig;
+
+import es.upm.dit.isst.eDOC.model.Asignatura;
 import es.upm.dit.isst.eDOC.model.Encuesta;
 
 
@@ -42,7 +44,8 @@ public class FormLoginServlet extends HttpServlet {
         // autenticacion Alumno
         if ( email.indexOf("@alumnos.upm.es") > -1) {
                 req.getSession().setAttribute("alumno", email);
-                getServletContext().getRequestDispatcher("/alumno_inicio.html").forward(req,resp);
+               getServletContext().getRequestDispatcher("/alumno_inicio.html").forward(req,resp);
+                
               return;
 
         }     

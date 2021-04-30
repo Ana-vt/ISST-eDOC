@@ -1,8 +1,9 @@
 package es.upm.dit.isst.eDOC.model;
+import java.util.List;
 
 import java.io.Serializable;
 import java.util.Arrays;
-
+import javax.persistence.*;
 
 
 public class Usuario implements Serializable {
@@ -10,14 +11,31 @@ public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	
-	
 	private int id;
 	private String name;
 	private String email;
 	private String password;
 	private String rol;
-	private String asignaturas;
 	private String departamento;
+	
+	@JoinTable(
+		name = "rel_usuarios_asignaturas",
+		joinColumns = @JoinColumn(name = "FK_USUARIO", nullable = false),
+		inverseJoinColumns = @JoinColumn(name="FK_ASIGNATURA", nullable = false)
+			)
+	
+	private List<Asignatura> asignaturas;
+	
+	@JoinTable(
+			name = "rel_usuarios_grupos",
+			joinColumns = @JoinColumn(name = "FK_USUARIO", nullable = false),
+			inverseJoinColumns = @JoinColumn(name="FK_GRUPO", nullable = false)
+				)
+	
+	private List<Grupo> grupos;
+	
+	public Usuario(){}
+	
 	public int getId() {
 		return id;
 	}
@@ -48,12 +66,7 @@ public class Usuario implements Serializable {
 	public void setRol(String rol) {
 		this.rol = rol;
 	}
-	public String getAsignaturas() {
-		return asignaturas;
-	}
-	public void setAsignaturas(String asignaturas) {
-		this.asignaturas = asignaturas;
-	}
+	
 	public String getDepartamento() {
 		return departamento;
 	}
@@ -67,12 +80,11 @@ public class Usuario implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((asignaturas == null) ? 0 : asignaturas.hashCode());
-		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((departamento == null) ? 0 : departamento.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((rol == null) ? 0 : rol.hashCode());
 		return result;
 	}
@@ -85,16 +97,6 @@ public class Usuario implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Usuario other = (Usuario) obj;
-		if (asignaturas == null) {
-			if (other.asignaturas != null)
-				return false;
-		} else if (!asignaturas.equals(other.asignaturas))
-			return false;
-		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
-			return false;
 		if (departamento == null) {
 			if (other.departamento != null)
 				return false;
@@ -112,6 +114,11 @@ public class Usuario implements Serializable {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
 		if (rol == null) {
 			if (other.rol != null)
 				return false;
@@ -121,9 +128,10 @@ public class Usuario implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", name=" + name + ", email=" + email + ", contraseña=" + password + ", rol="
-				+ rol + ", asignaturas=" + asignaturas + ", departamento=" + departamento + "]";
+		return "Usuario [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", rol=" + rol
+				+ ", departamento=" + departamento + "]";
 	}
+	
 	
 	
 	

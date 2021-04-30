@@ -1,6 +1,7 @@
 package es.upm.dit.isst.eDOC.servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,11 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.glassfish.jersey.client.ClientConfig;
 
+import es.upm.dit.isst.eDOC.model.Asignatura;
 import es.upm.dit.isst.eDOC.model.Encuesta;
 
 /**
@@ -81,18 +84,23 @@ public class FormEncuesta extends HttpServlet {
 		
 		encuesta.setRespuesta_Test24(Double.parseDouble(request.getParameter("satisfaccion")));
 		
+		encuesta.setAsignatura(encuesta.getAsignatura());
 		
 		
 		Client client = ClientBuilder.newClient(new ClientConfig());
 		Response r = client.target(URLHelper.getURL()).request()
                 .post(Entity.entity(encuesta, MediaType.APPLICATION_JSON)
                , Response.class);
-       // if (r.getStatus() == 200) {
+		List<Asignatura> asignaturas = client.target(URLHelperAsignaturas.getURL())
+	    		 .request().accept(MediaType.APPLICATION_JSON)
+        		.get(new GenericType<List<Asignatura>>() {});
+        request.setAttribute("asignaturas", asignaturas);  
+        
         		request.getSession().setAttribute("encuesta", encuesta);
-                getServletContext().getRequestDispatcher("/alumno_encuestas.html")
+                getServletContext().getRequestDispatcher("/alumno_encuestas.jsp")
                       .forward(request, response);
                 return;
-       // }
+      
         
         //getServletContext().getRequestDispatcher("/alumno_encuestas.html").forward(request, response);;
 		

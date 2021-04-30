@@ -1,7 +1,6 @@
 package es.upm.dit.isst.eDOC.model;
 
 import java.io.Serializable;
-import java.util.Arrays;
 import javax.persistence.*;
 
 @Entity
@@ -13,7 +12,14 @@ public class Encuesta implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private boolean Entregada;
-	private char Asignatura;
+	
+	@JoinColumn(name = " fk_asignatura" )
+	@ManyToOne
+	private Asignatura Asignatura;
+	
+	@JoinColumn(name = " fk_grupo" )
+	@ManyToOne
+	private Grupo Grupo;
 	
 	
 	private double Respuesta_Test1;
@@ -64,78 +70,6 @@ public class Encuesta implements Serializable {
 	
 	private double Respuesta_Test24;
 	
-	public double getRespuesta_Test16() {
-		return Respuesta_Test16;
-	}
-
-	public void setRespuesta_Test16(double respuesta_Test16) {
-		Respuesta_Test16 = respuesta_Test16;
-	}
-
-	public double getRespuesta_Test17() {
-		return Respuesta_Test17;
-	}
-
-	public void setRespuesta_Test17(double respuesta_Test17) {
-		Respuesta_Test17 = respuesta_Test17;
-	}
-
-	public double getRespuesta_Test18() {
-		return Respuesta_Test18;
-	}
-
-	public void setRespuesta_Test18(double respuesta_Test18) {
-		Respuesta_Test18 = respuesta_Test18;
-	}
-
-	public double getRespuesta_Test19() {
-		return Respuesta_Test19;
-	}
-
-	public void setRespuesta_Test19(double respuesta_Test19) {
-		Respuesta_Test19 = respuesta_Test19;
-	}
-
-	public double getRespuesta_Test20() {
-		return Respuesta_Test20;
-	}
-
-	public void setRespuesta_Test20(double respuesta_Test20) {
-		Respuesta_Test20 = respuesta_Test20;
-	}
-
-	public double getRespuesta_Test21() {
-		return Respuesta_Test21;
-	}
-
-	public void setRespuesta_Test21(double respuesta_Test21) {
-		Respuesta_Test21 = respuesta_Test21;
-	}
-
-	public double getRespuesta_Test22() {
-		return Respuesta_Test22;
-	}
-
-	public void setRespuesta_Test22(double respuesta_Test22) {
-		Respuesta_Test22 = respuesta_Test22;
-	}
-
-	public double getRespuesta_Test23() {
-		return Respuesta_Test23;
-	}
-
-	public void setRespuesta_Test23(double respuesta_Test23) {
-		Respuesta_Test23 = respuesta_Test23;
-	}
-
-	public double getRespuesta_Test24() {
-		return Respuesta_Test24;
-	}
-
-	public void setRespuesta_Test24(double respuesta_Test24) {
-		Respuesta_Test24 = respuesta_Test24;
-	}
-
 	@Lob
 	private String Respuesta_Texto;
 	
@@ -157,15 +91,21 @@ public class Encuesta implements Serializable {
 		Entregada = entregada;
 	}
 
-	public char getAsignatura() {
+	public Asignatura getAsignatura() {
 		return Asignatura;
 	}
 
-	public void setAsignatura(char asignatura) {
+	public void setAsignatura(Asignatura asignatura) {
 		Asignatura = asignatura;
 	}
 
+	public Grupo getGrupo() {
+		return Grupo;
+	}
 
+	public void setGrupo(Grupo grupo) {
+		Grupo = grupo;
+	}
 
 	public double getRespuesta_Test1() {
 		return Respuesta_Test1;
@@ -286,6 +226,79 @@ public class Encuesta implements Serializable {
 	public void setRespuesta_Test15(double respuesta_Test15) {
 		Respuesta_Test15 = respuesta_Test15;
 	}
+	
+	public double getRespuesta_Test16() {
+		return Respuesta_Test16;
+	}
+
+	public void setRespuesta_Test16(double respuesta_Test16) {
+		Respuesta_Test16 = respuesta_Test16;
+	}
+
+	public double getRespuesta_Test17() {
+		return Respuesta_Test17;
+	}
+
+	public void setRespuesta_Test17(double respuesta_Test17) {
+		Respuesta_Test17 = respuesta_Test17;
+	}
+
+	public double getRespuesta_Test18() {
+		return Respuesta_Test18;
+	}
+
+	public void setRespuesta_Test18(double respuesta_Test18) {
+		Respuesta_Test18 = respuesta_Test18;
+	}
+
+	public double getRespuesta_Test19() {
+		return Respuesta_Test19;
+	}
+
+	public void setRespuesta_Test19(double respuesta_Test19) {
+		Respuesta_Test19 = respuesta_Test19;
+	}
+
+	public double getRespuesta_Test20() {
+		return Respuesta_Test20;
+	}
+
+	public void setRespuesta_Test20(double respuesta_Test20) {
+		Respuesta_Test20 = respuesta_Test20;
+	}
+
+	public double getRespuesta_Test21() {
+		return Respuesta_Test21;
+	}
+
+	public void setRespuesta_Test21(double respuesta_Test21) {
+		Respuesta_Test21 = respuesta_Test21;
+	}
+
+	public double getRespuesta_Test22() {
+		return Respuesta_Test22;
+	}
+
+	public void setRespuesta_Test22(double respuesta_Test22) {
+		Respuesta_Test22 = respuesta_Test22;
+	}
+
+	public double getRespuesta_Test23() {
+		return Respuesta_Test23;
+	}
+
+	public void setRespuesta_Test23(double respuesta_Test23) {
+		Respuesta_Test23 = respuesta_Test23;
+	}
+
+	public double getRespuesta_Test24() {
+		return Respuesta_Test24;
+	}
+
+	public void setRespuesta_Test24(double respuesta_Test24) {
+		Respuesta_Test24 = respuesta_Test24;
+	}
+
 
 	public String getRespuesta_Texto() {
 		return Respuesta_Texto;
@@ -303,8 +316,9 @@ public class Encuesta implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + Asignatura;
+		result = prime * result + ((Asignatura == null) ? 0 : Asignatura.hashCode());
 		result = prime * result + (Entregada ? 1231 : 1237);
+		result = prime * result + ((Grupo == null) ? 0 : Grupo.hashCode());
 		long temp;
 		temp = Double.doubleToLongBits(Respuesta_Test1);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
@@ -368,9 +382,17 @@ public class Encuesta implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Encuesta other = (Encuesta) obj;
-		if (Asignatura != other.Asignatura)
+		if (Asignatura == null) {
+			if (other.Asignatura != null)
+				return false;
+		} else if (!Asignatura.equals(other.Asignatura))
 			return false;
 		if (Entregada != other.Entregada)
+			return false;
+		if (Grupo == null) {
+			if (other.Grupo != null)
+				return false;
+		} else if (!Grupo.equals(other.Grupo))
 			return false;
 		if (Double.doubleToLongBits(Respuesta_Test1) != Double.doubleToLongBits(other.Respuesta_Test1))
 			return false;
@@ -432,11 +454,11 @@ public class Encuesta implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Encuesta [id=" + id + ", Entregada=" + Entregada + ", Asignatura=" + Asignatura + ", Respuesta_Test1="
-				+ Respuesta_Test1 + ", Respuesta_Test2=" + Respuesta_Test2 + ", Respuesta_Test3=" + Respuesta_Test3
-				+ ", Respuesta_Test4=" + Respuesta_Test4 + ", Respuesta_Test5=" + Respuesta_Test5 + ", Respuesta_Test6="
-				+ Respuesta_Test6 + ", Respuesta_Test7=" + Respuesta_Test7 + ", Respuesta_Test8=" + Respuesta_Test8
-				+ ", Respuesta_Test9=" + Respuesta_Test9 + ", Respuesta_Test10=" + Respuesta_Test10
+		return "Encuesta [id=" + id + ", Entregada=" + Entregada + ", Asignatura=" + Asignatura + ", Grupo=" + Grupo
+				+ ", Respuesta_Test1=" + Respuesta_Test1 + ", Respuesta_Test2=" + Respuesta_Test2 + ", Respuesta_Test3="
+				+ Respuesta_Test3 + ", Respuesta_Test4=" + Respuesta_Test4 + ", Respuesta_Test5=" + Respuesta_Test5
+				+ ", Respuesta_Test6=" + Respuesta_Test6 + ", Respuesta_Test7=" + Respuesta_Test7 + ", Respuesta_Test8="
+				+ Respuesta_Test8 + ", Respuesta_Test9=" + Respuesta_Test9 + ", Respuesta_Test10=" + Respuesta_Test10
 				+ ", Respuesta_Test11=" + Respuesta_Test11 + ", Respuesta_Test12=" + Respuesta_Test12
 				+ ", Respuesta_Test13=" + Respuesta_Test13 + ", Respuesta_Test14=" + Respuesta_Test14
 				+ ", Respuesta_Test15=" + Respuesta_Test15 + ", Respuesta_Test16=" + Respuesta_Test16
@@ -447,14 +469,6 @@ public class Encuesta implements Serializable {
 				+ ", Respuesta_Texto=" + Respuesta_Texto + "]";
 	}
 
-
 	
-
-
-
-	
-
-	
-
 	
 }

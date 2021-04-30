@@ -29,8 +29,8 @@ public class UsuarioResource {
 	@GET
 	@Path("rol/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Usuario> readAll (@PathParam("id") String id) {
-	   return UsuarioDAOImplementation.getInstance().readAll(id);
+	public List<Usuario> readAll_rol (@PathParam("id") String id) {
+	   return UsuarioDAOImplementation.getInstance().readAll_rol(id);
 	}
 	
 	@POST
@@ -46,7 +46,7 @@ public class UsuarioResource {
 	
 	@DELETE
     @Path("{id}")
-    public Response delete(@PathParam("id") char  id) {
+    public Response delete(@PathParam("id") int  id) {
         Usuario rold = UsuarioDAOImplementation.getInstance().read(id);
         if (rold == null)
             return Response.notModified().build();

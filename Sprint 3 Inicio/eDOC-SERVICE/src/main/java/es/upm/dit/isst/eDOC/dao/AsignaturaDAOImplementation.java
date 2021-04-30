@@ -74,7 +74,7 @@ public class AsignaturaDAOImplementation implements AsignaturaDAO {
 	}
 
 	@Override
-	public List<Asignatura> readAll(int curso) {
+	public List<Asignatura> readAll_curso(int curso) {
 		List<Asignatura> res = new ArrayList<Asignatura>();
 		for (Asignatura asignatura : this.readAll())
 			if (asignatura.getCurso() == (curso))

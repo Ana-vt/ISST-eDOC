@@ -30,7 +30,7 @@ public class AsignaturaResource {
 	@Path("curso/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Asignatura> readAll (@PathParam("id") int id) {
-	   return AsignaturaDAOImplementation.getInstance().readAll(id);
+	   return AsignaturaDAOImplementation.getInstance().readAll_curso(id);
 	}
 	
 	@POST

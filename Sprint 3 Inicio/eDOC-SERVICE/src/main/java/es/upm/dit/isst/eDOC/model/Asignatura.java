@@ -1,7 +1,6 @@
 package es.upm.dit.isst.eDOC.model;
-
+import java.util.List;
 import java.io.Serializable;
-import java.util.Arrays;
 import javax.persistence.*;
 
 @Entity
@@ -15,7 +14,13 @@ public class Asignatura implements Serializable {
 	private String name;
 	private char acronimo;
 	private int curso;
-	private int sementre;
+	private int semestre;
+	
+	@ManyToMany(mappedBy = "asignaturas")
+    private List<Usuario> usuarios;
+	
+	public Asignatura(){}
+	
 	public int getId() {
 		return id;
 	}
@@ -40,11 +45,11 @@ public class Asignatura implements Serializable {
 	public void setCurso(int curso) {
 		this.curso = curso;
 	}
-	public int getSementre() {
-		return sementre;
+	public int getSemestre() {
+		return semestre;
 	}
-	public void setSementre(int sementre) {
-		this.sementre = sementre;
+	public void setSemestre(int semestre) {
+		this.semestre = semestre;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -57,7 +62,7 @@ public class Asignatura implements Serializable {
 		result = prime * result + curso;
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + sementre;
+		result = prime * result + semestre;
 		return result;
 	}
 	@Override
@@ -80,14 +85,14 @@ public class Asignatura implements Serializable {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (sementre != other.sementre)
+		if (semestre != other.semestre)
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
 		return "Asignatura [id=" + id + ", name=" + name + ", acronimo=" + acronimo + ", curso=" + curso + ", sementre="
-				+ sementre + "]";
+				+ semestre + "]";
 	}
 	
 	
