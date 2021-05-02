@@ -1,6 +1,7 @@
 package es.upm.dit.isst.eDOC.dao;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.hibernate.Session;
@@ -75,7 +76,7 @@ public class UsuarioDAOImplementation implements UsuarioDAO {
 	}
 
 	@Override
-	public List<Usuario> readAll_rol (String rol) {
+	public List<Usuario> readAll_rol(String rol) {
 		List<Usuario> res = new ArrayList<Usuario>();
 		for (Usuario usuario : this.readAll())
 			if (usuario.getRol() == (rol))
@@ -83,6 +84,27 @@ public class UsuarioDAOImplementation implements UsuarioDAO {
 		return res;
 	}
 	
+	@Override
+	public Usuario read_email(String email){
+		for (Usuario usuario : this.readAll())
+			if (usuario.getEmail() == (email))
+				return usuario;
+				System.out.print("Usuario seleccionado");
+				
+		System.out.print("Usuario no seleccionado");
+		return null;
+		
+		
+	}
+		
+	/*@Override
+	public List<Asignatura> readByUsuario (int id){
+		List<Asignatura> res = new ArrayList<Asignatura>();
+		for (int i = 0; i < rel_usuarios_asignaturas.size(); i++) {
+			
+		}
+	}*/
+		
 	
 
 }

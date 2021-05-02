@@ -63,6 +63,7 @@ public class Asignatura implements Serializable {
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + semestre;
+		result = prime * result + ((usuarios == null) ? 0 : usuarios.hashCode());
 		return result;
 	}
 	@Override
@@ -87,12 +88,17 @@ public class Asignatura implements Serializable {
 			return false;
 		if (semestre != other.semestre)
 			return false;
+		if (usuarios == null) {
+			if (other.usuarios != null)
+				return false;
+		} else if (!usuarios.equals(other.usuarios))
+			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Asignatura [id=" + id + ", name=" + name + ", acronimo=" + acronimo + ", curso=" + curso + ", sementre="
-				+ semestre + "]";
+		return "Asignatura [id=" + id + ", name=" + name + ", acronimo=" + acronimo + ", curso=" + curso + ", semestre="
+				+ semestre + ", usuarios=" + usuarios + "]";
 	}
 	
 	

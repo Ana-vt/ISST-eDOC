@@ -12,5 +12,7 @@ public interface UsuarioDAO {
 	public Usuario delete(Usuario usuario);
 	public List<Usuario> readAll();
 	public List<Usuario> readAll_rol(String rol); //para leer los usuarios por rol.
+	public Usuario read_email(String email); //para leer los usuarios por rol.
+	//public List<Asignatura> readByUsuario (int id);
 
 }

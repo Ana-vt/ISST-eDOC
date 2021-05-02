@@ -58,7 +58,7 @@ public class Usuario implements Serializable {
 	public String getPassword() {
 		return password;
 	}
-	public void setContraseña(String password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 	public String getRol() {
@@ -74,6 +74,21 @@ public class Usuario implements Serializable {
 	public void setDepartamento(String departamento) {
 		this.departamento = departamento;
 	}
+	public List<Asignatura> getAsignaturas() {
+		return asignaturas;
+	}
+
+	public void setAsignaturas(List<Asignatura> asignaturas) {
+		this.asignaturas = asignaturas;
+	}
+
+	public List<Grupo> getGrupos() {
+		return grupos;
+	}
+
+	public void setGrupos(List<Grupo> grupos) {
+		this.grupos = grupos;
+	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -81,8 +96,10 @@ public class Usuario implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((asignaturas == null) ? 0 : asignaturas.hashCode());
 		result = prime * result + ((departamento == null) ? 0 : departamento.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((grupos == null) ? 0 : grupos.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
@@ -98,6 +115,11 @@ public class Usuario implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Usuario other = (Usuario) obj;
+		if (asignaturas == null) {
+			if (other.asignaturas != null)
+				return false;
+		} else if (!asignaturas.equals(other.asignaturas))
+			return false;
 		if (departamento == null) {
 			if (other.departamento != null)
 				return false;
@@ -107,6 +129,11 @@ public class Usuario implements Serializable {
 			if (other.email != null)
 				return false;
 		} else if (!email.equals(other.email))
+			return false;
+		if (grupos == null) {
+			if (other.grupos != null)
+				return false;
+		} else if (!grupos.equals(other.grupos))
 			return false;
 		if (id != other.id)
 			return false;
@@ -130,10 +157,8 @@ public class Usuario implements Serializable {
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", rol=" + rol
-				+ ", departamento=" + departamento + "]";
+				+ ", departamento=" + departamento + ", asignaturas=" + asignaturas + ", grupos=" + grupos + "]";
 	}
-	
-	
-	
+
 	
 }

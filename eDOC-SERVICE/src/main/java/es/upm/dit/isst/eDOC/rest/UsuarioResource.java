@@ -1,6 +1,7 @@
 package es.upm.dit.isst.eDOC.rest;
 
 import java.net.URI;
+
 import java.net.URISyntaxException;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class UsuarioResource {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Usuario> readAll () {
+	public List<Usuario> readAll() {
 	     return UsuarioDAOImplementation.getInstance().readAll();
 	}
 		
@@ -31,6 +32,13 @@ public class UsuarioResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Usuario> readAll_rol (@PathParam("id") String id) {
 	   return UsuarioDAOImplementation.getInstance().readAll_rol(id);
+	}
+	
+	@GET
+	@Path("{email}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Usuario read_email(@PathParam("email") String email) {
+	   return UsuarioDAOImplementation.getInstance().read_email(email);
 	}
 	
 	@POST

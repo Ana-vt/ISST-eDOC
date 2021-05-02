@@ -1,6 +1,7 @@
 package es.upm.dit.isst.eDOC.rest;
 
 import java.net.URI;
+
 import java.net.URISyntaxException;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class AsignaturaResource {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Asignatura> readAll () {
+	public List<Asignatura> readAll() {
 	     return AsignaturaDAOImplementation.getInstance().readAll();
 	}
 		

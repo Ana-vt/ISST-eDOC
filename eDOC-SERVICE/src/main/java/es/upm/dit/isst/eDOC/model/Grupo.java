@@ -37,6 +37,7 @@ public class Grupo implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + id;
+		result = prime * result + ((usuarios == null) ? 0 : usuarios.hashCode());
 		return result;
 	}
 
@@ -51,12 +52,17 @@ public class Grupo implements Serializable {
 		Grupo other = (Grupo) obj;
 		if (id != other.id)
 			return false;
+		if (usuarios == null) {
+			if (other.usuarios != null)
+				return false;
+		} else if (!usuarios.equals(other.usuarios))
+			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Grupo [id=" + id + "]";
+		return "Grupo [id=" + id + ", usuarios=" + usuarios + "]";
 	}
 	
 	
