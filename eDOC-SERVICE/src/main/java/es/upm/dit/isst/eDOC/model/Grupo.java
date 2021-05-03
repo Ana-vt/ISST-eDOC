@@ -2,6 +2,7 @@ package es.upm.dit.isst.eDOC.model;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -15,8 +16,21 @@ public class Grupo implements Serializable {
 	@Id
 	private int id;
 	
-	@ManyToMany(mappedBy = "grupos")
+	@JoinTable(
+			name = "rel_usuarios_grupos",
+			joinColumns = @JoinColumn(name = "FK_GRUPO", nullable = false),
+			inverseJoinColumns = @JoinColumn(name="FK_USUARIOS", nullable = false)
+				)
+	
+	@ManyToMany(cascade = CascadeType.ALL)
     private List<Usuario> usuarios;
+	
+	public void addUsuario (Usuario usuario){
+        if(this.usuarios == null){
+        	this.usuarios = new ArrayList<Usuario>();
+        }
+        this.usuarios.add(usuario);
+    }
 	
 	public Grupo(){}
 
@@ -27,6 +41,15 @@ public class Grupo implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+
+	/*public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}*/
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;

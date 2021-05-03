@@ -15,9 +15,11 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import es.upm.dit.isst.eDOC.dao.EncuestaDAOImplementation;
+import es.upm.dit.isst.eDOC.dao.UsuarioDAOImplementation;
 import es.upm.dit.isst.eDOC.model.Asignatura;
 import es.upm.dit.isst.eDOC.model.Encuesta;
 import es.upm.dit.isst.eDOC.model.Grupo;
+import es.upm.dit.isst.eDOC.model.Usuario;
 
 @Path("/Encuestas")
 public class EncuestaResource {
@@ -28,14 +30,15 @@ public class EncuestaResource {
 	     return EncuestaDAOImplementation.getInstance().readAll();
 	}
 	
-	/*
 	@GET
-	@Path("asignatura/{id}")
+	@Path("{asignatura}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Encuesta> readAll_asignatura (@PathParam("id") Asignatura id) {
-	   return EncuestaDAOImplementation.getInstance().readAll_asignatura(id);
+	public List<Encuesta> readAll_asignatura(@PathParam("asignatura") Asignatura asignatura) {
+	   return EncuestaDAOImplementation.getInstance().readAll_asignatura(asignatura);
 	}
 	
+	/*
+		
 	@GET
 	@Path("asignatura/{id}")
 	@Produces(MediaType.APPLICATION_JSON)

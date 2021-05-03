@@ -76,7 +76,7 @@ public class EncuestaDAOImplementation implements EncuestaDAO {
 		return encuestas;
 	}
 
-	/*
+	
 	@Override
 	public List<Encuesta> readAll_asignatura (Asignatura asignatura) {
 		List<Encuesta> res = new ArrayList<Encuesta>();
@@ -85,7 +85,7 @@ public class EncuestaDAOImplementation implements EncuestaDAO {
 				res.add(encuesta);
 		return res;
 	}
-	
+	/*
 	@Override
 	public List<Encuesta> readAll_grupo(Grupo grupo) {
 		List<Encuesta> res = new ArrayList<Encuesta>();

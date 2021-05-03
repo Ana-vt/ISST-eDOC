@@ -87,7 +87,7 @@ public class UsuarioDAOImplementation implements UsuarioDAO {
 	@Override
 	public Usuario read_email(String email){
 		for (Usuario usuario : this.readAll())
-			if (usuario.getEmail() == (email))
+			if (usuario.getEmail().equals(email))
 				return usuario;
 				System.out.print("Usuario seleccionado");
 				

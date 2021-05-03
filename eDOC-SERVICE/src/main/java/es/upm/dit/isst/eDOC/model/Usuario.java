@@ -5,6 +5,11 @@ import java.io.Serializable;
 import java.util.Arrays;
 import javax.persistence.*;
 
+import org.hibernate.FetchMode;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 @Entity
 public class Usuario implements Serializable {
 	
@@ -19,20 +24,14 @@ public class Usuario implements Serializable {
 	private String rol;
 	private String departamento;
 	
-	@JoinTable(
-		name = "rel_usuarios_asignaturas",
-		joinColumns = @JoinColumn(name = "FK_USUARIO", nullable = false),
-		inverseJoinColumns = @JoinColumn(name="FK_ASIGNATURA", nullable = false)
-			)
-	@ManyToMany
+	
+	@ManyToMany(mappedBy = "usuarios") //fetch = FetchType.EAGER)
+	@LazyCollection (LazyCollectionOption.FALSE)
 	private List<Asignatura> asignaturas;
 	
-	@JoinTable(
-			name = "rel_usuarios_grupos",
-			joinColumns = @JoinColumn(name = "FK_USUARIO", nullable = false),
-			inverseJoinColumns = @JoinColumn(name="FK_GRUPO", nullable = false)
-				)
-	@ManyToMany
+	
+	@ManyToMany(mappedBy = "usuarios")
+	@LazyCollection (LazyCollectionOption.FALSE)
 	private List<Grupo> grupos;
 	
 	public Usuario(){}
@@ -74,6 +73,10 @@ public class Usuario implements Serializable {
 	public void setDepartamento(String departamento) {
 		this.departamento = departamento;
 	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 	public List<Asignatura> getAsignaturas() {
 		return asignaturas;
 	}
@@ -89,9 +92,7 @@ public class Usuario implements Serializable {
 	public void setGrupos(List<Grupo> grupos) {
 		this.grupos = grupos;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -106,6 +107,7 @@ public class Usuario implements Serializable {
 		result = prime * result + ((rol == null) ? 0 : rol.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -154,11 +156,17 @@ public class Usuario implements Serializable {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", rol=" + rol
 				+ ", departamento=" + departamento + ", asignaturas=" + asignaturas + ", grupos=" + grupos + "]";
 	}
+	
 
+	
+	
+	
+	
 	
 }
