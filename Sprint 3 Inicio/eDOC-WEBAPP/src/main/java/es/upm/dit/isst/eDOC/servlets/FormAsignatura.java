@@ -16,6 +16,7 @@ import javax.ws.rs.core.MediaType;
 import org.glassfish.jersey.client.ClientConfig;
 
 import es.upm.dit.isst.eDOC.model.Asignatura;
+import es.upm.dit.isst.eDOC.model.Usuario;
 
 /**
  * Servlet implementation class FormAsignatura
@@ -32,7 +33,13 @@ public class FormAsignatura extends HttpServlet {
 		List<Asignatura> asignaturas = client.target(URLHelperAsignaturas.getURL())
 	    		 .request().accept(MediaType.APPLICATION_JSON)
          		.get(new GenericType<List<Asignatura>>() {});
-         req.setAttribute("asignaturas", asignaturas);  
+         req.setAttribute("asignaturas", asignaturas);
+         
+         List<Usuario> usuarios = client.target(URLHelperUsuarios.getURL())
+	    		 .request().accept(MediaType.APPLICATION_JSON)
+         		.get(new GenericType<List<Usuario>>() {});
+         req.setAttribute("usuarios", usuarios); 
+         
 		getServletContext().getRequestDispatcher("/alumno_encuestas.jsp").forward(req,resp);
 		return;
 	}

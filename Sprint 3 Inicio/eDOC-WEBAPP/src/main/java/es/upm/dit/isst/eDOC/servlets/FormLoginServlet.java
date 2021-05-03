@@ -17,6 +17,7 @@ import org.glassfish.jersey.client.ClientConfig;
 
 import es.upm.dit.isst.eDOC.model.Asignatura;
 import es.upm.dit.isst.eDOC.model.Encuesta;
+import es.upm.dit.isst.eDOC.model.Usuario;
 
 
 @WebServlet("/FormLoginServlet")
@@ -43,8 +44,14 @@ public class FormLoginServlet extends HttpServlet {
         
         // autenticacion Alumno
         if ( email.indexOf("@alumnos.upm.es") > -1) {
+        	
+        	 List<Usuario> usuarios = client.target(URLHelperUsuarios.getURL())
+    	    		 .request().accept(MediaType.APPLICATION_JSON)
+             		.get(new GenericType<List<Usuario>>() {});
+             req.setAttribute("usuarios", usuarios); 
+             
                 req.getSession().setAttribute("alumno", email);
-               getServletContext().getRequestDispatcher("/alumno_inicio.html").forward(req,resp);
+               getServletContext().getRequestDispatcher("/alumno_inicio.jsp").forward(req,resp);
                 
               return;
 
