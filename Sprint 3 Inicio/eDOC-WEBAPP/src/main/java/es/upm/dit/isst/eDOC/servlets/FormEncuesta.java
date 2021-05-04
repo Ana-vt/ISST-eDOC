@@ -84,13 +84,13 @@ public class FormEncuesta extends HttpServlet {
 		
 		encuesta.setRespuesta_Test24(Double.parseDouble(request.getParameter("satisfaccion")));
 		
+		encuesta.setAsignatura(encuesta.getAsignatura());
 		
 		
 		Client client = ClientBuilder.newClient(new ClientConfig());
 		Response r = client.target(URLHelper.getURL()).request()
                 .post(Entity.entity(encuesta, MediaType.APPLICATION_JSON)
                , Response.class);
-       
 		List<Asignatura> asignaturas = client.target(URLHelperAsignaturas.getURL())
 	    		 .request().accept(MediaType.APPLICATION_JSON)
         		.get(new GenericType<List<Asignatura>>() {});
@@ -102,7 +102,7 @@ public class FormEncuesta extends HttpServlet {
                 return;
       
         
-       
+        //getServletContext().getRequestDispatcher("/alumno_encuestas.html").forward(request, response);;
 		
 	}
 

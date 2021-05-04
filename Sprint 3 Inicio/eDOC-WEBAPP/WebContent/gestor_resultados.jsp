@@ -6,29 +6,29 @@
 
 <html>
   <head>
-  <script src="//code.jquery.com/jquery-latest.js"></script>
     <title>eDOC</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/alumno_encuestas.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/gestor_inicio.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" >
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="alumno_inicio.html"><i class= "fa fa-home"></i>Inicio</a>
+              <a class="nav-link" href="gestor_inicio.html"><i class= "fa fa-home"></i>Inicio</a>
             </li>
             <li class="nav-item">
-                     <form class="asignatura-form"action="FormAsignatura" >
-                        <button> Encuestas </button>
-                    </form>
-                    </li>
+              <a class="nav-link" href="gestor_resultados.jsp"><i class= "fa fa-paste"></i>Resultados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gestor_publicaciones.html"><i class= "fa fa-poll-h"></i>Publicaciones</a>
+            </li>
           </ul>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
@@ -37,7 +37,7 @@
                   <i class="fa fa-user-circle" aria-hidden="true">  Usuario xxxx</i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="index.html"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesiÃ³n</a>
+                  <a class="dropdown-item" href="index.html"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesión</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">Editar perfil</a>
                 </div>
@@ -47,11 +47,7 @@
         </div>
       </nav>
       
-      <h2 class="subtitle"> Encuestas por realizar:</h2>
-      <div class="padre">
-      <!--<div class="hijo">-->
-      
-        <table class="table  table-striped ">
+      <table class="table  table-striped ">
 
             <thead>
               <tr>
@@ -59,7 +55,7 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Acronimo</th>
                 <th scope="col">Semestre</th>
-                <th scope="col">Realizar</th>
+                <th scope="col">Mostrar Datos</th>
               </tr>
             </thead>
             
@@ -72,7 +68,7 @@
                 <td>${asignaturai.acronimo}</td>
                 <td> ${asignaturai.semestre}</td>
                 <td>
-                    <a href="Encuestas.html" class="btn btn-warning" >Realizar</a>
+                    <a href="Encuestas.html" class="btn btn-warning" >Mostrar Datos</a>
                 </td>
               </tr>
                
@@ -81,14 +77,12 @@
              </c:forEach>
              
           </table>
-      <!--</div>-->
-    </div>
       
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>

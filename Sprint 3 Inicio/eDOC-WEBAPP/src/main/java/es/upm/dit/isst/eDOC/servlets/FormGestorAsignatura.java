@@ -20,8 +20,8 @@ import es.upm.dit.isst.eDOC.model.Asignatura;
 /**
  * Servlet implementation class FormAsignatura
  */
-@WebServlet("/FormAsignatura")
-public class FormAsignatura extends HttpServlet {
+@WebServlet("/FormGestorAsignatura")
+public class FormGestorAsignatura extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -33,7 +33,7 @@ public class FormAsignatura extends HttpServlet {
 	    		 .request().accept(MediaType.APPLICATION_JSON)
          		.get(new GenericType<List<Asignatura>>() {});
          req.setAttribute("asignaturas", asignaturas);  
-		getServletContext().getRequestDispatcher("/alumno_encuestas.jsp").forward(req,resp);
+		getServletContext().getRequestDispatcher("/gestor_resultados.jsp").forward(req,resp);
 		return;
 	}
 	
