@@ -15,6 +15,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.glassfish.jersey.client.ClientConfig;
 import es.upm.dit.isst.eDOC.model.Encuesta;
+import es.upm.dit.isst.eDOC.model.Usuario;
 
 
 @WebServlet("/FormLoginServlet")
@@ -34,14 +35,14 @@ public class FormLoginServlet extends HttpServlet {
 
         // autenticacion Gestor
         if( ADMIN_EMAIL.equals(email) && ADMIN_PASSWORD.equals(password) ) {        
-             req.getSession().setAttribute("admin", true);
+             req.getSession().setAttribute("email_admin", true);
              getServletContext().getRequestDispatcher("/gestor_inicio.html").forward(req, resp);
             return;
         }
         
         // autenticacion Alumno
         if ( email.indexOf("@alumnos.upm.es") > -1) {
-                req.getSession().setAttribute("alumno", email);
+                req.getSession().setAttribute("email_alumno", email);
                 getServletContext().getRequestDispatcher("/alumno_inicio.html").forward(req,resp);
               return;
 
@@ -49,8 +50,15 @@ public class FormLoginServlet extends HttpServlet {
         
      // autenticacion Alumno
         if ( email.indexOf("@upm.es") > -1) {
-                req.getSession().setAttribute("profesor", email);
-                getServletContext().getRequestDispatcher("/profesor_inicio.html").forward(req,resp);
+                req.getSession().setAttribute("email_profesor", email);
+                
+                String departamento = client.target(URLHelperUsuarios.getURL()+ "/" + email)
+        				.request().accept(MediaType.APPLICATION_JSON).get(Usuario.class).getDepartamento();
+        		
+                req.getSession().setAttribute("departamento", departamento);
+                System.out.print(departamento);
+                
+                getServletContext().getRequestDispatcher("/profesor_inicio.jsp").forward(req,resp);
               return;
 
         }     

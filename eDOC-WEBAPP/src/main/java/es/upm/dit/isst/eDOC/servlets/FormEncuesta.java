@@ -84,7 +84,7 @@ public class FormEncuesta extends HttpServlet {
 		
 		
 		Client client = ClientBuilder.newClient(new ClientConfig());
-		Response r = client.target(URLHelper.getURL()).request()
+		Response r = client.target(URLHelperEncuestas.getURL()).request()
                 .post(Entity.entity(encuesta, MediaType.APPLICATION_JSON)
                , Response.class);
        // if (r.getStatus() == 200) {

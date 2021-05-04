@@ -146,5 +146,4 @@ public class Usuario implements Serializable {
 				+ ", departamento=" + departamento + ", asignaturas=" + asignaturas + ", grupos=" + grupos + "]";
 	}
 	
-
 }
