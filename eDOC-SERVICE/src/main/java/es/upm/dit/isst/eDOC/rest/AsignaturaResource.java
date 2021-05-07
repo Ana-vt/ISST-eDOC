@@ -16,7 +16,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import es.upm.dit.isst.eDOC.dao.AsignaturaDAOImplementation;
+import es.upm.dit.isst.eDOC.dao.UsuarioDAOImplementation;
 import es.upm.dit.isst.eDOC.model.Asignatura;
+import es.upm.dit.isst.eDOC.model.Usuario;
 
 @Path("/Asignaturas")
 public class AsignaturaResource {
@@ -32,6 +34,13 @@ public class AsignaturaResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Asignatura> readAll (@PathParam("id") int id) {
 	   return AsignaturaDAOImplementation.getInstance().readAll_curso(id);
+	}
+	
+	@GET
+	@Path("{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Asignatura read(@PathParam("id") int id) {
+	   return AsignaturaDAOImplementation.getInstance().read(id);
 	}
 	
 	@POST

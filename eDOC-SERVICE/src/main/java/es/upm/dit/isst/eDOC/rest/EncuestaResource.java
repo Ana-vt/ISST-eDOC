@@ -30,6 +30,7 @@ public class EncuestaResource {
 	     return EncuestaDAOImplementation.getInstance().readAll();
 	}
 	
+	/*
 	@GET
 	@Path("{asignatura}")
 	@Produces(MediaType.APPLICATION_JSON)

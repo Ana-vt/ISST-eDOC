@@ -13,11 +13,11 @@ public class Encuesta implements Serializable {
 	private int id;
 	private boolean Entregada;
 	
-	@JoinColumn(name = " fk_asignatura" )
+	@JoinColumn(name = "fk_asignatura" )
 	@ManyToOne
 	private Asignatura Asignatura;
 	
-	@JoinColumn(name = " fk_grupo" )
+	@JoinColumn(name = "fk_grupo" )
 	@ManyToOne
 	private Grupo Grupo;
 	
