@@ -43,7 +43,7 @@ public class FormLoginServlet extends HttpServlet {
         // autenticacion Alumno
         if ( email.indexOf("@alumnos.upm.es") > -1) {
                 req.getSession().setAttribute("email_alumno", email);
-                getServletContext().getRequestDispatcher("/alumno_inicio.html").forward(req,resp);
+                getServletContext().getRequestDispatcher("/alumno_inicio.jsp").forward(req,resp);
               return;
 
         }     

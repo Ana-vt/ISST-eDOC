@@ -1,4 +1,4 @@
-package es.upm.dit.isst.eDOC.servlets;
+/*package es.upm.dit.isst.eDOC.servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,9 +21,7 @@ import es.upm.dit.isst.eDOC.model.Encuesta;
 import es.upm.dit.isst.eDOC.model.Grupo;
 import es.upm.dit.isst.eDOC.model.Usuario;
 
-/**
- * Servlet implementation class ResultadosProfesor
- */
+
 @WebServlet("/ResultadosProfesor")
 public class ResultadosProfesor extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -61,12 +59,10 @@ public class ResultadosProfesor extends HttpServlet {
 		getServletContext().getRequestDispatcher("/profesor_resultados.jsp").forward(request,response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
-}
+}*/

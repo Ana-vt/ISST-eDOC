@@ -26,22 +26,21 @@ import es.upm.dit.isst.eDOC.servlets.*;
 /**
  * Servlet implementation class AsignaturasProfesor
  */
-@WebServlet("/AsignaturasProfesor")
-public class AsignaturasProfesor extends HttpServlet {
+@WebServlet("/AsignaturasAlumno")
+public class AsignaturasAlumno extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Client client = ClientBuilder.newClient(new ClientConfig());
-		String email = (String) request.getSession().getAttribute("email_profesor");
-		//System.out.print(email);
+		String email = (String) request.getSession().getAttribute("email_alumno");
+		System.out.print(email);
 	  
 		List<Asignatura> asignaturas = client.target(URLHelperUsuarios.getURL()+ "/" + email)
 				.request().accept(MediaType.APPLICATION_JSON).get(Usuario.class).getAsignaturas();
 		
 		request.getSession().setAttribute("asignaturas", asignaturas);
-		request.getSession().setAttribute("numero_asignaturas", asignaturas.size());
 		
-		getServletContext().getRequestDispatcher("/profesor_asignaturas.jsp").forward(request,response);
+		getServletContext().getRequestDispatcher("/alumno_encuestas.jsp").forward(request,response);
 	}
 
 	
@@ -51,3 +50,4 @@ public class AsignaturasProfesor extends HttpServlet {
 	}
 
 }
+

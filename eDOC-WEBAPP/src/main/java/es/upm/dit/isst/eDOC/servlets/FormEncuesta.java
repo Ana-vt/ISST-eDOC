@@ -1,6 +1,7 @@
 package es.upm.dit.isst.eDOC.servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +16,9 @@ import javax.ws.rs.core.Response;
 
 import org.glassfish.jersey.client.ClientConfig;
 
+import es.upm.dit.isst.eDOC.model.Asignatura;
 import es.upm.dit.isst.eDOC.model.Encuesta;
+import es.upm.dit.isst.eDOC.model.Usuario;
 
 /**
  * Servlet implementation class FormEncuesta
@@ -25,6 +28,8 @@ public class FormEncuesta extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		Client client = ClientBuilder.newClient(new ClientConfig());
 		
 		Encuesta encuesta = new Encuesta();
 		//encuesta.setAsignatura();
@@ -82,19 +87,30 @@ public class FormEncuesta extends HttpServlet {
 		encuesta.setRespuesta_Test24(Double.parseDouble(request.getParameter("satisfaccion")));
 		
 		
+		int id_asignatura_seleccionada = (int) request.getSession().getAttribute("id_asignatura_seleccionada");
 		
-		Client client = ClientBuilder.newClient(new ClientConfig());
+		System.out.print(id_asignatura_seleccionada);
+		
+		Asignatura asignatura_seleccionada = client.target(URLHelperAsignaturas.getURL()+ "/" + id_asignatura_seleccionada)
+				.request().accept(MediaType.APPLICATION_JSON).get(Asignatura.class);
+		
+		encuesta.setAsignatura(asignatura_seleccionada);
+			
+		
 		Response r = client.target(URLHelperEncuestas.getURL()).request()
                 .post(Entity.entity(encuesta, MediaType.APPLICATION_JSON)
                , Response.class);
-       // if (r.getStatus() == 200) {
-        		request.getSession().setAttribute("encuesta", encuesta);
-                getServletContext().getRequestDispatcher("/alumno_encuestas.html")
-                      .forward(request, response);
+      
+		
+		
+		request.getSession().setAttribute("entregada", true);
+        request.getSession().setAttribute("encuesta", encuesta);
+        		
+        getServletContext().getRequestDispatcher("/alumno_encuestas.jsp").forward(request, response);
                 return;
-       // }
+       
         
-        //getServletContext().getRequestDispatcher("/alumno_encuestas.html").forward(request, response);;
+        
 		
 	}
 
