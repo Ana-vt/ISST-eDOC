@@ -1,6 +1,7 @@
 package es.upm.dit.isst.eDOC.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -18,6 +19,7 @@ import org.glassfish.jersey.client.ClientConfig;
 
 import es.upm.dit.isst.eDOC.model.Asignatura;
 import es.upm.dit.isst.eDOC.model.Encuesta;
+import es.upm.dit.isst.eDOC.model.Grupo;
 import es.upm.dit.isst.eDOC.model.Usuario;
 
 /**
@@ -30,6 +32,8 @@ public class FormEncuesta extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Client client = ClientBuilder.newClient(new ClientConfig());
+		
+		
 		
 		Encuesta encuesta = new Encuesta();
 		//encuesta.setAsignatura();
@@ -95,16 +99,57 @@ public class FormEncuesta extends HttpServlet {
 				.request().accept(MediaType.APPLICATION_JSON).get(Asignatura.class);
 		
 		encuesta.setAsignatura(asignatura_seleccionada);
+		
+		//Para borrar la fila
+		
+		List<Asignatura> asignaturas = (List<Asignatura>)request.getSession().getAttribute("asignaturas");
+		
+		List<Asignatura> asignaturas_actualizadas = new ArrayList<Asignatura>();
+		
+		for(Asignatura asignatura: asignaturas) {
+			if (!(asignatura.getId()==(id_asignatura_seleccionada)))
+				asignaturas_actualizadas.add(asignatura);
+		}
+		
+		request.getSession().setAttribute("asignaturas", asignaturas_actualizadas);
+		
+		//Seleccion de grupo
+		
+		int curso_asignatura_seleccionada = asignatura_seleccionada.getCurso();
+		
+		System.out.print("curso_asignatura_seleccionada");
+		System.out.print(curso_asignatura_seleccionada);
+		
+		String email = (String) request.getSession().getAttribute("email_alumno");
+		
+		List<Grupo> grupos_usuario = client.target(URLHelperUsuarios.getURL()+ "/" + email)
+				.request().accept(MediaType.APPLICATION_JSON).get(Usuario.class).getGrupos();
+		int prueba = 0;
+		
+		Grupo grupo_seleccionado = new Grupo();
+			for(Grupo grupo_usuario: grupos_usuario) {
+				char primer_numero_grupo = String.valueOf(grupo_usuario.getId()).charAt(0);
+				int primer_numero_grupo_int = Character.getNumericValue(primer_numero_grupo);
+				System.out.print("primer_numero_grupo");
+				System.out.print(primer_numero_grupo);
+				if (curso_asignatura_seleccionada == primer_numero_grupo_int) {
+					grupo_seleccionado = grupo_usuario; 
+				}
+				else {prueba = 3;}
+					
+					
+			}
 			
+			
+		encuesta.setGrupo(grupo_seleccionado);
+		System.out.print(grupo_seleccionado);
+		System.out.print(prueba);
 		
 		Response r = client.target(URLHelperEncuestas.getURL()).request()
                 .post(Entity.entity(encuesta, MediaType.APPLICATION_JSON)
                , Response.class);
       
-		
-		
-		request.getSession().setAttribute("entregada", true);
-        request.getSession().setAttribute("encuesta", encuesta);
+	
         		
         getServletContext().getRequestDispatcher("/alumno_encuestas.jsp").forward(request, response);
                 return;
