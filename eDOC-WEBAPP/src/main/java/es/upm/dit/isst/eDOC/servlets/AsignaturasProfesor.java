@@ -41,6 +41,10 @@ public class AsignaturasProfesor extends HttpServlet {
 		request.getSession().setAttribute("asignaturas", asignaturas);
 		request.getSession().setAttribute("numero_asignaturas", asignaturas.size());
 		
+		/*int num_encuestas_realizadas = Integer.parseInt((String)request.getSession().getAttribute("num_encuestas_realizadas"));
+		request.getSession().setAttribute("num_encuestas_realizadas", num_encuestas_realizadas );*/
+		
+		
 		getServletContext().getRequestDispatcher("/profesor_asignaturas.jsp").forward(request,response);
 	}
 

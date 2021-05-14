@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="alumno_inicio.html"><i class= "fa fa-home"></i>Inicio</a>
+              <a class="nav-link" href="alumno_inicio.jsp"><i class= "fa fa-home"></i>Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="AsignaturasAlumno"><i class= "fa fa-paste"></i>Encuestas</a>
@@ -35,9 +35,7 @@
                   <i class="fa fa-user-circle" aria-hidden="true"> <%= session.getAttribute("email_alumno") %> </i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="index.html"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesión</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Editar perfil</a>
+                  <a class="dropdown-item" href="FormLogoutServlet"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesión</a>
                 </div>
               </li>
             </ul>
@@ -70,19 +68,11 @@
                 <td>${a.acronimo}</td>
                 <td> ${a.semestre}</td>
                 <td>
-                <c:choose>
-         			<c:when test="${entregada == 'true'} && ${id_asignatura_seleccionada.equals(a.id)}"> 
-            			<p>Encuesta realizada.</p>
-            		</c:when>
-                	<c:otherwise>
-                		<form action = "AccesoEncuestas" >
+                	<form action = "AccesoEncuestas" >
          				<button class="btn btn-warning">Realizar</button>
          				<input type ="hidden" value ="<c:out value = "${a.id}">identificador</c:out>" name = "id">
          			</form> 
-       
-            		</c:otherwise>
-            	</c:choose>
-           			              
+                     
                 </td>
               </tr>
                

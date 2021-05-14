@@ -32,7 +32,7 @@ public class AccesoEncuestas extends HttpServlet {
 			
 		request.getSession().setAttribute("id_asignatura_seleccionada", id);
 		
-		getServletContext().getRequestDispatcher("/Encuestas.html").forward(request,response);
+		getServletContext().getRequestDispatcher("/Encuestas.jsp").forward(request,response);
 	}
 
 	

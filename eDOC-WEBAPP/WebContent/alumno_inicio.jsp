@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html lang="es">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <title>eDOC</title>
         <script type = "text/javascript">
             //let encuestas_realizadas = 0;
@@ -34,9 +34,8 @@
                                 <i class="fa fa-user-circle" aria-hidden="true"> <%= session.getAttribute("email_alumno") %> </i>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="index.html"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesi髇</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Editar perfil</a>
+                                <a class="dropdown-item" href="FormLogoutServlet"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesi贸n</a>
+                                
                             </div>
                         </li>
                     </ul>
@@ -46,23 +45,19 @@
 
         <h1 class="title" >Bienvenido a eDOC</h1>
 
-        <h2 class="subtitle" style = "color:#ffa500">Tu p醙ina de evaluaciones docentes</h2>
+        <h2 class="subtitle" style = "color:#ffa500">Tu p谩gina de evaluaciones docentes</h2>
         <div class="padre">
-            <div class="progress-circle over50 p66" >
-                <span>66%</span>
-                <div class="left-half-clipper">
-                    <div class="first50-bar"></div>
-                    <div class="value-bar"></div>
-                </div>
-            </div>
-    
-            <p class="hijo" >Encuestas realizadas</p>
-    
-            <ul class = "lista" >
-                <li class = "lista_hijo">ISST</li>
-                <li class = "lista_hijo">DORE</li>
-            </ul>
-        </div>
+        	<div align="center">
+            	<img src="static/img/alumnos.png" width="250" height="250" class="departamento" />
+           	</div>
+        
+        <p>Estas encuestas tienen una gran importancia en el Procedimiento de Evaluaci贸n de la Actividad Docente del Profesorado de la Universidad Polit茅cnica de Madrid, pues aportan 50 puntos sobre los 140 posibles sobre los que se eval煤a a los profesores.</p>
+    	<p>Tu opini贸n es muy importante para la calidad docente y aporta informaci贸n relevante para tus profesores y los responsables acad茅micos.</p>
+    	<p>Muchas gracias!!</p>
+    	
+    	</div>
+       
+        
         
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

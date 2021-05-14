@@ -30,9 +30,7 @@
                   <i class="fa fa-user-circle" aria-hidden="true"> <%= session.getAttribute("email_profesor") %> </i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="index.html"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesión</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Editar perfil</a>
+                  <a class="dropdown-item" href="FormLogoutServlet"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesión</a>
                 </div>
               </li>
             </ul>
@@ -49,21 +47,23 @@
                 <th scope="col">Curso</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Acrónimo</th>
-                <th scope="col">Realizadas</th>
+                <th scope="col">Alumnos matriculados</th>
                 <th scope="col">Ver encuestas</th>
               </tr>
             </thead>
             <c:forEach items="${asignaturas}" var="a">
-             
             <tbody>
             	<tr id="asignatura'+a.id+'">
                		<td>${a.curso}</td>
                 	<td>${a.name}</td>
                 	<td>${a.acronimo}</td>
-                	<td>2/${a.usuarios_matriculados}</td>
-                	<td><button class="btn btn-warning">Resultado</button></td>
-                	
-         
+                	<td>${a.usuarios_matriculados}</td>
+                	<td>
+                		<form action = "MuestraResultadosProfesor" >
+                			<button class="btn btn-warning">Resultado</button>
+                				<input type ="hidden" value ="<c:out value = "${a.id}">identificador</c:out>" name = "id_asignatura_seleccionada_profesor">
+                		</form>
+                	</td>
               	</tr>              	
             </tbody>
             </c:forEach>

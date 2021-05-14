@@ -33,9 +33,7 @@
                   <i class="fa fa-user-circle" aria-hidden="true"><%= session.getAttribute("email_profesor") %></i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesión</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Editar perfil</a>
+                  <a class="dropdown-item" href="FormLogoutServlet"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesión</a>
                 </div>
               </li>
             </ul>
@@ -47,7 +45,7 @@
         <table id='TablaPreguntas' class="table  table-striped table-bordered">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">Identificador</th>
               <th scope="col">1</th>
               <th scope="col">2</th>
               <th scope="col">3</th>
@@ -73,37 +71,48 @@
               <th scope="col">23</th>
               <th scope="col">24</th>
               <th scope="col">25</th>
-              <th scope="col">Conformidad</th>
+              
+              
               
             </tr>
           </thead>
+          
+          <c:forEach items= "${encuestas_asignatura_grupo}" var="e">
           <tbody>
             <tr>
-              <th id="fila1">1</td>
-              <td>2</td>
-              <td>5</td>
-              <td>2</td>
+              <th id="fila1">${e.id}</td>
+              <td>${e.respuesta_Test1}</td>
+              <td>${e.respuesta_Test2}</td>
+              <td>${e.respuesta_Test3}</td>
+              <td>${e.respuesta_Test4}</td>
+              <td>${e.respuesta_Test5}</td>
+              <td>${e.respuesta_Test6}</td>
+              <td>${e.respuesta_Test7}</td>
+              <td>${e.respuesta_Test8}</td>
+              <td>${e.respuesta_Test9}</td>
+              <td>${e.respuesta_Test10}</td>
+              <td>${e.respuesta_Test11}</td>
+              <td>${e.respuesta_Test12}</td>
+              <td>${e.respuesta_Test13}</td>
+              <td>${e.respuesta_Test14}</td>
+              <td>${e.respuesta_Test15}</td>
+              <td>${e.respuesta_Test16}</td>
+              <td>${e.respuesta_Test17}</td>
+              <td>${e.respuesta_Test18}</td>
+              <td>${e.respuesta_Test19}</td>
+              <td>${e.respuesta_Test20}</td>
+              <td>${e.respuesta_Test21}</td>
+              <td>${e.respuesta_Test22}</td>
+              <td>${e.respuesta_Test23}</td>
+              <td>${e.respuesta_Test24}</td>
+              <td>${e.respuesta_Texto}</td>
+              
+                      
+              
               
             </tr>
-            <tr>
-              <th scope="row">2</td>
-              <td>2</td>
-              <td>2</td>
-              <td>4</td>
-            </tr>
-            <tr>
-              <th scope="row">3</td>
-              <td>2</td>
-              <td>5</td>
-              <td>6</td>
-            </tr>
-            <tr>
-              <th scope="row">4</td>
-              <td>2</td>
-              <td>3</td>
-              <td>2</td>
-            </tr>
           </tbody>
+          </c:forEach>
         </table>
 
       </div>
@@ -124,7 +133,7 @@
         var newCell  = newRow.insertCell(0);
       
         // Añade un nodo de texto a la celda
-        var newText  = document.createTextNode('La media es: mediausuarios/usuariostotales');
+        var newText  = document.createTextNode('Encuestas realizadas por tus alumnos:');
         newCell.appendChild(newText);
       }
       

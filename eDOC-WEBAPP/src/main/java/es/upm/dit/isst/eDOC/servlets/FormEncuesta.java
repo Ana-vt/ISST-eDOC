@@ -90,6 +90,7 @@ public class FormEncuesta extends HttpServlet {
 		
 		encuesta.setRespuesta_Test24(Double.parseDouble(request.getParameter("satisfaccion")));
 		
+		String email = (String) request.getSession().getAttribute("email_alumno");
 		
 		int id_asignatura_seleccionada = (int) request.getSession().getAttribute("id_asignatura_seleccionada");
 		
@@ -111,6 +112,9 @@ public class FormEncuesta extends HttpServlet {
 				asignaturas_actualizadas.add(asignatura);
 		}
 		
+		client.target(URLHelperUsuarios.getURL()+ "/" + email)
+				.request().accept(MediaType.APPLICATION_JSON).get(Usuario.class).setAsignaturas(asignaturas_actualizadas);
+		
 		request.getSession().setAttribute("asignaturas", asignaturas_actualizadas);
 		
 		//Seleccion de grupo
@@ -120,7 +124,6 @@ public class FormEncuesta extends HttpServlet {
 		System.out.print("curso_asignatura_seleccionada");
 		System.out.print(curso_asignatura_seleccionada);
 		
-		String email = (String) request.getSession().getAttribute("email_alumno");
 		
 		List<Grupo> grupos_usuario = client.target(URLHelperUsuarios.getURL()+ "/" + email)
 				.request().accept(MediaType.APPLICATION_JSON).get(Usuario.class).getGrupos();
