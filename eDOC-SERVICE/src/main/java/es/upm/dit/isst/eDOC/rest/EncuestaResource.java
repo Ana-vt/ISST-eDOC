@@ -30,6 +30,13 @@ public class EncuestaResource {
 	     return EncuestaDAOImplementation.getInstance().readAll();
 	}
 	
+	@GET
+	@Path("{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Encuesta> readAll(@PathParam("id") int id) {
+	   return EncuestaDAOImplementation.getInstance().readAll( id);
+	}
+	
 	/*
 	@GET
 	@Path("{asignatura}")

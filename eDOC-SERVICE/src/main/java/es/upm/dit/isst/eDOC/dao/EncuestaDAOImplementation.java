@@ -78,10 +78,10 @@ public class EncuestaDAOImplementation implements EncuestaDAO {
 
 	
 	@Override
-	public List<Encuesta> readAll_asignatura (Asignatura asignatura) {
+	public List<Encuesta> readAll(int id) {
 		List<Encuesta> res = new ArrayList<Encuesta>();
 		for (Encuesta encuesta : this.readAll())
-			if (encuesta.getAsignatura() == (asignatura))
+			if (encuesta.getAsignatura().getId() == (id))
 				res.add(encuesta);
 		return res;
 	}

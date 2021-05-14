@@ -11,67 +11,67 @@ public class Encuesta implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	private boolean Entregada;
+	private boolean entregada;
 	
 	@JoinColumn(name = "fk_asignatura" )
 	@ManyToOne
-	private Asignatura Asignatura;
+	private Asignatura asignatura;
 	
 	@JoinColumn(name = "fk_grupo" )
 	@ManyToOne
-	private Grupo Grupo;
+	private Grupo grupo;
 	
 	
-	private double Respuesta_Test1;
+private double respuesta_Test1;
 	
-	private double Respuesta_Test2;
+	private double respuesta_Test2;
 	
-	private double Respuesta_Test3;
+	private double respuesta_Test3;
 	
-	private double Respuesta_Test4;
+	private double respuesta_Test4;
 	
-	private double Respuesta_Test5;
+	private double respuesta_Test5;
 	
-	private double Respuesta_Test6;
+	private double respuesta_Test6;
 	
-	private double Respuesta_Test7;
+	private double respuesta_Test7;
 	
-	private double Respuesta_Test8;
+	private double respuesta_Test8;
 	
-	private double Respuesta_Test9;
+	private double respuesta_Test9;
 	
-	private double Respuesta_Test10;
+	private double respuesta_Test10;
 	
-	private double Respuesta_Test11;
+	private double respuesta_Test11;
 	
-	private double Respuesta_Test12;
+	private double respuesta_Test12;
 	
-	private double Respuesta_Test13;
+	private double respuesta_Test13;
 	
-	private double Respuesta_Test14;
+	private double respuesta_Test14;
 	
-	private double Respuesta_Test15;
+	private double respuesta_Test15;
 	
-	private double Respuesta_Test16;
+	private double respuesta_Test16;
 	
-	private double Respuesta_Test17;
+	private double respuesta_Test17;
 	
-	private double Respuesta_Test18;
+	private double respuesta_Test18;
 	
-	private double Respuesta_Test19;
+	private double respuesta_Test19;
 	
-	private double Respuesta_Test20;
+	private double respuesta_Test20;
 	
-	private double Respuesta_Test21;
+	private double respuesta_Test21;
 	
-	private double Respuesta_Test22;
+	private double respuesta_Test22;
 	
-	private double Respuesta_Test23;
+	private double respuesta_Test23;
 	
-	private double Respuesta_Test24;
+	private double respuesta_Test24;
 	
 	@Lob
-	private String Respuesta_Texto;
+	private String respuesta_Texto;
 	
 	public Encuesta(){}
 
@@ -84,228 +84,227 @@ public class Encuesta implements Serializable {
 	}
 
 	public boolean isEntregada() {
-		return Entregada;
+		return entregada;
 	}
 
 	public void setEntregada(boolean entregada) {
-		Entregada = entregada;
+		this.entregada = entregada;
 	}
 
 	public Asignatura getAsignatura() {
-		return Asignatura;
+		return asignatura;
 	}
 
 	public void setAsignatura(Asignatura asignatura) {
-		Asignatura = asignatura;
+		this.asignatura = asignatura;
 	}
 
 	public Grupo getGrupo() {
-		return Grupo;
+		return grupo;
 	}
 
 	public void setGrupo(Grupo grupo) {
-		Grupo = grupo;
+		this.grupo = grupo;
 	}
 
 	public double getRespuesta_Test1() {
-		return Respuesta_Test1;
+		return respuesta_Test1;
 	}
 
 	public void setRespuesta_Test1(double respuesta_Test1) {
-		Respuesta_Test1 = respuesta_Test1;
+		this.respuesta_Test1 = respuesta_Test1;
 	}
 
 	public double getRespuesta_Test2() {
-		return Respuesta_Test2;
+		return respuesta_Test2;
 	}
 
 	public void setRespuesta_Test2(double respuesta_Test2) {
-		Respuesta_Test2 = respuesta_Test2;
+		this.respuesta_Test2 = respuesta_Test2;
 	}
 
 	public double getRespuesta_Test3() {
-		return Respuesta_Test3;
+		return respuesta_Test3;
 	}
 
 	public void setRespuesta_Test3(double respuesta_Test3) {
-		Respuesta_Test3 = respuesta_Test3;
+		this.respuesta_Test3 = respuesta_Test3;
 	}
 
 	public double getRespuesta_Test4() {
-		return Respuesta_Test4;
+		return respuesta_Test4;
 	}
 
 	public void setRespuesta_Test4(double respuesta_Test4) {
-		Respuesta_Test4 = respuesta_Test4;
+		this.respuesta_Test4 = respuesta_Test4;
 	}
 
 	public double getRespuesta_Test5() {
-		return Respuesta_Test5;
+		return respuesta_Test5;
 	}
 
 	public void setRespuesta_Test5(double respuesta_Test5) {
-		Respuesta_Test5 = respuesta_Test5;
+		this.respuesta_Test5 = respuesta_Test5;
 	}
 
 	public double getRespuesta_Test6() {
-		return Respuesta_Test6;
+		return respuesta_Test6;
 	}
 
 	public void setRespuesta_Test6(double respuesta_Test6) {
-		Respuesta_Test6 = respuesta_Test6;
+		this.respuesta_Test6 = respuesta_Test6;
 	}
 
 	public double getRespuesta_Test7() {
-		return Respuesta_Test7;
+		return respuesta_Test7;
 	}
 
 	public void setRespuesta_Test7(double respuesta_Test7) {
-		Respuesta_Test7 = respuesta_Test7;
+		this.respuesta_Test7 = respuesta_Test7;
 	}
 
 	public double getRespuesta_Test8() {
-		return Respuesta_Test8;
+		return respuesta_Test8;
 	}
 
 	public void setRespuesta_Test8(double respuesta_Test8) {
-		Respuesta_Test8 = respuesta_Test8;
+		this.respuesta_Test8 = respuesta_Test8;
 	}
 
 	public double getRespuesta_Test9() {
-		return Respuesta_Test9;
+		return respuesta_Test9;
 	}
 
 	public void setRespuesta_Test9(double respuesta_Test9) {
-		Respuesta_Test9 = respuesta_Test9;
+		this.respuesta_Test9 = respuesta_Test9;
 	}
 
 	public double getRespuesta_Test10() {
-		return Respuesta_Test10;
+		return respuesta_Test10;
 	}
 
 	public void setRespuesta_Test10(double respuesta_Test10) {
-		Respuesta_Test10 = respuesta_Test10;
+		this.respuesta_Test10 = respuesta_Test10;
 	}
 
 	public double getRespuesta_Test11() {
-		return Respuesta_Test11;
+		return respuesta_Test11;
 	}
 
 	public void setRespuesta_Test11(double respuesta_Test11) {
-		Respuesta_Test11 = respuesta_Test11;
+		this.respuesta_Test11 = respuesta_Test11;
 	}
 
 	public double getRespuesta_Test12() {
-		return Respuesta_Test12;
+		return respuesta_Test12;
 	}
 
 	public void setRespuesta_Test12(double respuesta_Test12) {
-		Respuesta_Test12 = respuesta_Test12;
+		this.respuesta_Test12 = respuesta_Test12;
 	}
 
 	public double getRespuesta_Test13() {
-		return Respuesta_Test13;
+		return respuesta_Test13;
 	}
 
 	public void setRespuesta_Test13(double respuesta_Test13) {
-		Respuesta_Test13 = respuesta_Test13;
+		this.respuesta_Test13 = respuesta_Test13;
 	}
 
 	public double getRespuesta_Test14() {
-		return Respuesta_Test14;
+		return respuesta_Test14;
 	}
 
 	public void setRespuesta_Test14(double respuesta_Test14) {
-		Respuesta_Test14 = respuesta_Test14;
+		this.respuesta_Test14 = respuesta_Test14;
 	}
 
 	public double getRespuesta_Test15() {
-		return Respuesta_Test15;
+		return respuesta_Test15;
 	}
 
 	public void setRespuesta_Test15(double respuesta_Test15) {
-		Respuesta_Test15 = respuesta_Test15;
+		this.respuesta_Test15 = respuesta_Test15;
 	}
-	
+
 	public double getRespuesta_Test16() {
-		return Respuesta_Test16;
+		return respuesta_Test16;
 	}
 
 	public void setRespuesta_Test16(double respuesta_Test16) {
-		Respuesta_Test16 = respuesta_Test16;
+		this.respuesta_Test16 = respuesta_Test16;
 	}
 
 	public double getRespuesta_Test17() {
-		return Respuesta_Test17;
+		return respuesta_Test17;
 	}
 
 	public void setRespuesta_Test17(double respuesta_Test17) {
-		Respuesta_Test17 = respuesta_Test17;
+		this.respuesta_Test17 = respuesta_Test17;
 	}
 
 	public double getRespuesta_Test18() {
-		return Respuesta_Test18;
+		return respuesta_Test18;
 	}
 
 	public void setRespuesta_Test18(double respuesta_Test18) {
-		Respuesta_Test18 = respuesta_Test18;
+		this.respuesta_Test18 = respuesta_Test18;
 	}
 
 	public double getRespuesta_Test19() {
-		return Respuesta_Test19;
+		return respuesta_Test19;
 	}
 
 	public void setRespuesta_Test19(double respuesta_Test19) {
-		Respuesta_Test19 = respuesta_Test19;
+		this.respuesta_Test19 = respuesta_Test19;
 	}
 
 	public double getRespuesta_Test20() {
-		return Respuesta_Test20;
+		return respuesta_Test20;
 	}
 
 	public void setRespuesta_Test20(double respuesta_Test20) {
-		Respuesta_Test20 = respuesta_Test20;
+		this.respuesta_Test20 = respuesta_Test20;
 	}
 
 	public double getRespuesta_Test21() {
-		return Respuesta_Test21;
+		return respuesta_Test21;
 	}
 
 	public void setRespuesta_Test21(double respuesta_Test21) {
-		Respuesta_Test21 = respuesta_Test21;
+		this.respuesta_Test21 = respuesta_Test21;
 	}
 
 	public double getRespuesta_Test22() {
-		return Respuesta_Test22;
+		return respuesta_Test22;
 	}
 
 	public void setRespuesta_Test22(double respuesta_Test22) {
-		Respuesta_Test22 = respuesta_Test22;
+		this.respuesta_Test22 = respuesta_Test22;
 	}
 
 	public double getRespuesta_Test23() {
-		return Respuesta_Test23;
+		return respuesta_Test23;
 	}
 
 	public void setRespuesta_Test23(double respuesta_Test23) {
-		Respuesta_Test23 = respuesta_Test23;
+		this.respuesta_Test23 = respuesta_Test23;
 	}
 
 	public double getRespuesta_Test24() {
-		return Respuesta_Test24;
+		return respuesta_Test24;
 	}
 
 	public void setRespuesta_Test24(double respuesta_Test24) {
-		Respuesta_Test24 = respuesta_Test24;
+		this.respuesta_Test24 = respuesta_Test24;
 	}
 
-
 	public String getRespuesta_Texto() {
-		return Respuesta_Texto;
+		return respuesta_Texto;
 	}
 
 	public void setRespuesta_Texto(String respuesta_Texto) {
-		Respuesta_Texto = respuesta_Texto;
+		this.respuesta_Texto = respuesta_Texto;
 	}
 
 	public static long getSerialversionuid() {
@@ -316,60 +315,60 @@ public class Encuesta implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Asignatura == null) ? 0 : Asignatura.hashCode());
-		result = prime * result + (Entregada ? 1231 : 1237);
-		result = prime * result + ((Grupo == null) ? 0 : Grupo.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(Respuesta_Test1);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test10);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test11);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test12);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test13);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test14);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test15);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test16);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test17);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test18);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test19);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test2);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test20);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test21);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test22);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test23);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test24);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test3);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test4);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test5);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test6);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test7);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test8);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(Respuesta_Test9);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((Respuesta_Texto == null) ? 0 : Respuesta_Texto.hashCode());
+		result = prime * result + ((asignatura == null) ? 0 : asignatura.hashCode());
+		result = prime * result + (entregada ? 1231 : 1237);
+		result = prime * result + ((grupo == null) ? 0 : grupo.hashCode());
 		result = prime * result + id;
+		long temp;
+		temp = Double.doubleToLongBits(respuesta_Test1);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test10);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test11);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test12);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test13);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test14);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test15);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test16);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test17);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test18);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test19);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test2);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test20);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test21);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test22);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test23);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test24);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test3);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test4);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test5);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test6);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test7);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test8);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(respuesta_Test9);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((respuesta_Texto == null) ? 0 : respuesta_Texto.hashCode());
 		return result;
 	}
 
@@ -382,91 +381,91 @@ public class Encuesta implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Encuesta other = (Encuesta) obj;
-		if (Asignatura == null) {
-			if (other.Asignatura != null)
+		if (asignatura == null) {
+			if (other.asignatura != null)
 				return false;
-		} else if (!Asignatura.equals(other.Asignatura))
+		} else if (!asignatura.equals(other.asignatura))
 			return false;
-		if (Entregada != other.Entregada)
+		if (entregada != other.entregada)
 			return false;
-		if (Grupo == null) {
-			if (other.Grupo != null)
+		if (grupo == null) {
+			if (other.grupo != null)
 				return false;
-		} else if (!Grupo.equals(other.Grupo))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test1) != Double.doubleToLongBits(other.Respuesta_Test1))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test10) != Double.doubleToLongBits(other.Respuesta_Test10))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test11) != Double.doubleToLongBits(other.Respuesta_Test11))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test12) != Double.doubleToLongBits(other.Respuesta_Test12))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test13) != Double.doubleToLongBits(other.Respuesta_Test13))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test14) != Double.doubleToLongBits(other.Respuesta_Test14))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test15) != Double.doubleToLongBits(other.Respuesta_Test15))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test16) != Double.doubleToLongBits(other.Respuesta_Test16))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test17) != Double.doubleToLongBits(other.Respuesta_Test17))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test18) != Double.doubleToLongBits(other.Respuesta_Test18))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test19) != Double.doubleToLongBits(other.Respuesta_Test19))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test2) != Double.doubleToLongBits(other.Respuesta_Test2))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test20) != Double.doubleToLongBits(other.Respuesta_Test20))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test21) != Double.doubleToLongBits(other.Respuesta_Test21))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test22) != Double.doubleToLongBits(other.Respuesta_Test22))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test23) != Double.doubleToLongBits(other.Respuesta_Test23))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test24) != Double.doubleToLongBits(other.Respuesta_Test24))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test3) != Double.doubleToLongBits(other.Respuesta_Test3))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test4) != Double.doubleToLongBits(other.Respuesta_Test4))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test5) != Double.doubleToLongBits(other.Respuesta_Test5))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test6) != Double.doubleToLongBits(other.Respuesta_Test6))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test7) != Double.doubleToLongBits(other.Respuesta_Test7))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test8) != Double.doubleToLongBits(other.Respuesta_Test8))
-			return false;
-		if (Double.doubleToLongBits(Respuesta_Test9) != Double.doubleToLongBits(other.Respuesta_Test9))
-			return false;
-		if (Respuesta_Texto == null) {
-			if (other.Respuesta_Texto != null)
-				return false;
-		} else if (!Respuesta_Texto.equals(other.Respuesta_Texto))
+		} else if (!grupo.equals(other.grupo))
 			return false;
 		if (id != other.id)
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test1) != Double.doubleToLongBits(other.respuesta_Test1))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test10) != Double.doubleToLongBits(other.respuesta_Test10))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test11) != Double.doubleToLongBits(other.respuesta_Test11))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test12) != Double.doubleToLongBits(other.respuesta_Test12))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test13) != Double.doubleToLongBits(other.respuesta_Test13))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test14) != Double.doubleToLongBits(other.respuesta_Test14))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test15) != Double.doubleToLongBits(other.respuesta_Test15))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test16) != Double.doubleToLongBits(other.respuesta_Test16))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test17) != Double.doubleToLongBits(other.respuesta_Test17))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test18) != Double.doubleToLongBits(other.respuesta_Test18))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test19) != Double.doubleToLongBits(other.respuesta_Test19))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test2) != Double.doubleToLongBits(other.respuesta_Test2))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test20) != Double.doubleToLongBits(other.respuesta_Test20))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test21) != Double.doubleToLongBits(other.respuesta_Test21))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test22) != Double.doubleToLongBits(other.respuesta_Test22))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test23) != Double.doubleToLongBits(other.respuesta_Test23))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test24) != Double.doubleToLongBits(other.respuesta_Test24))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test3) != Double.doubleToLongBits(other.respuesta_Test3))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test4) != Double.doubleToLongBits(other.respuesta_Test4))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test5) != Double.doubleToLongBits(other.respuesta_Test5))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test6) != Double.doubleToLongBits(other.respuesta_Test6))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test7) != Double.doubleToLongBits(other.respuesta_Test7))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test8) != Double.doubleToLongBits(other.respuesta_Test8))
+			return false;
+		if (Double.doubleToLongBits(respuesta_Test9) != Double.doubleToLongBits(other.respuesta_Test9))
+			return false;
+		if (respuesta_Texto == null) {
+			if (other.respuesta_Texto != null)
+				return false;
+		} else if (!respuesta_Texto.equals(other.respuesta_Texto))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Encuesta [id=" + id + ", Entregada=" + Entregada + ", Asignatura=" + Asignatura + ", Grupo=" + Grupo
-				+ ", Respuesta_Test1=" + Respuesta_Test1 + ", Respuesta_Test2=" + Respuesta_Test2 + ", Respuesta_Test3="
-				+ Respuesta_Test3 + ", Respuesta_Test4=" + Respuesta_Test4 + ", Respuesta_Test5=" + Respuesta_Test5
-				+ ", Respuesta_Test6=" + Respuesta_Test6 + ", Respuesta_Test7=" + Respuesta_Test7 + ", Respuesta_Test8="
-				+ Respuesta_Test8 + ", Respuesta_Test9=" + Respuesta_Test9 + ", Respuesta_Test10=" + Respuesta_Test10
-				+ ", Respuesta_Test11=" + Respuesta_Test11 + ", Respuesta_Test12=" + Respuesta_Test12
-				+ ", Respuesta_Test13=" + Respuesta_Test13 + ", Respuesta_Test14=" + Respuesta_Test14
-				+ ", Respuesta_Test15=" + Respuesta_Test15 + ", Respuesta_Test16=" + Respuesta_Test16
-				+ ", Respuesta_Test17=" + Respuesta_Test17 + ", Respuesta_Test18=" + Respuesta_Test18
-				+ ", Respuesta_Test19=" + Respuesta_Test19 + ", Respuesta_Test20=" + Respuesta_Test20
-				+ ", Respuesta_Test21=" + Respuesta_Test21 + ", Respuesta_Test22=" + Respuesta_Test22
-				+ ", Respuesta_Test23=" + Respuesta_Test23 + ", Respuesta_Test24=" + Respuesta_Test24
-				+ ", Respuesta_Texto=" + Respuesta_Texto + "]";
+		return "Encuesta [id=" + id + ", entregada=" + entregada + ", asignatura=" + asignatura + ", grupo=" + grupo
+				+ ", respuesta_Test1=" + respuesta_Test1 + ", respuesta_Test2=" + respuesta_Test2 + ", respuesta_Test3="
+				+ respuesta_Test3 + ", respuesta_Test4=" + respuesta_Test4 + ", respuesta_Test5=" + respuesta_Test5
+				+ ", respuesta_Test6=" + respuesta_Test6 + ", respuesta_Test7=" + respuesta_Test7 + ", respuesta_Test8="
+				+ respuesta_Test8 + ", respuesta_Test9=" + respuesta_Test9 + ", respuesta_Test10=" + respuesta_Test10
+				+ ", respuesta_Test11=" + respuesta_Test11 + ", respuesta_Test12=" + respuesta_Test12
+				+ ", respuesta_Test13=" + respuesta_Test13 + ", respuesta_Test14=" + respuesta_Test14
+				+ ", respuesta_Test15=" + respuesta_Test15 + ", respuesta_Test16=" + respuesta_Test16
+				+ ", respuesta_Test17=" + respuesta_Test17 + ", respuesta_Test18=" + respuesta_Test18
+				+ ", respuesta_Test19=" + respuesta_Test19 + ", respuesta_Test20=" + respuesta_Test20
+				+ ", respuesta_Test21=" + respuesta_Test21 + ", respuesta_Test22=" + respuesta_Test22
+				+ ", respuesta_Test23=" + respuesta_Test23 + ", respuesta_Test24=" + respuesta_Test24
+				+ ", respuesta_Texto=" + respuesta_Texto + "]";
 	}
 
 	
