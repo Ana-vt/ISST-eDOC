@@ -146,7 +146,29 @@ public class FormEncuesta extends HttpServlet {
 			
 		encuesta.setGrupo(grupo_seleccionado);
 		System.out.print(grupo_seleccionado);
-		System.out.print(prueba);
+		
+		//Valores de medias
+		
+		double documentacion = ((Double.parseDouble(request.getParameter("apuntes")))+ (Double.parseDouble(request.getParameter("bibliografia"))))/2;
+		encuesta.setMedia_Documentacion(documentacion);
+		
+		double evaluacion = ((Double.parseDouble(request.getParameter("trabajos"))) + (Double.parseDouble(request.getParameter("examenes")))+ (Double.parseDouble(request.getParameter("sistema"))) + (Double.parseDouble(request.getParameter("esfuerzo"))))/4; 
+		encuesta.setMedia_Evaluacion(evaluacion);
+
+		double estudiante = ((Double.parseDouble(request.getParameter("asistencia"))) + (Double.parseDouble(request.getParameter("dia"))) + (Double.parseDouble(request.getParameter("tutoria"))) +(Double.parseDouble(request.getParameter("interesante"))) + (Double.parseDouble(request.getParameter("preparacion"))) + (Double.parseDouble(request.getParameter("conocimientos"))))/6;
+		encuesta.setMedia_Estudiante(estudiante);
+
+		double clases = ((Double.parseDouble(request.getParameter("horas"))) + (Double.parseDouble(request.getParameter("solapamientos"))))/2;
+		encuesta.setMedia_Clases(clases);
+
+		double profesorado = ((Double.parseDouble(request.getParameter("evaluacion"))) + (Double.parseDouble(request.getParameter("participacion"))) + (Double.parseDouble(request.getParameter("interes"))) + (Double.parseDouble(request.getParameter("guia"))) + (Double.parseDouble(request.getParameter("accesible"))) + (Double.parseDouble(request.getParameter("coordinacion"))) + (Double.parseDouble(request.getParameter("horario"))) + (Double.parseDouble(request.getParameter("claridad"))) + (Double.parseDouble(request.getParameter("repetir"))) )/9;
+		encuesta.setMedia_Profesorado(profesorado);
+
+		double satisfaccion = (Double.parseDouble(request.getParameter("satisfaccion")));
+		encuesta.setMedia_Satisfaccion(satisfaccion);
+	
+		double media_encuesta = (documentacion + evaluacion + estudiante + clases + profesorado + satisfaccion)/6;  		
+		encuesta.setMedia_Encuesta(media_encuesta);
 		
 		Response r = client.target(URLHelperEncuestas.getURL()).request()
                 .post(Entity.entity(encuesta, MediaType.APPLICATION_JSON)

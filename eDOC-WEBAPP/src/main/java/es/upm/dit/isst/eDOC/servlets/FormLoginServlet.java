@@ -36,7 +36,7 @@ public class FormLoginServlet extends HttpServlet {
         // autenticacion Gestor
         if( ADMIN_EMAIL.equals(email) && ADMIN_PASSWORD.equals(password) ) {        
              req.getSession().setAttribute("email_admin", true);
-             getServletContext().getRequestDispatcher("/gestor_inicio.html").forward(req, resp);
+             getServletContext().getRequestDispatcher("/gestor_inicio.jsp").forward(req, resp);
             return;
         }
         

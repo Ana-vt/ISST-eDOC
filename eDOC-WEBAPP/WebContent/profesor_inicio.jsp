@@ -35,7 +35,7 @@
                   <i class="fa fa-user-circle" aria-hidden="true">  <%= session.getAttribute("email_profesor") %></i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="FormLogoutServlet"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesiÃ³n</a>
+                  <a class="dropdown-item" href="FormLogoutServlet"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesión</a>
                 </div>
               </li>
             </ul>
@@ -75,11 +75,11 @@
             		<img src="static/img/alumnos.png" width="250" height="250" class="departamento" />
             	</c:otherwise>
             </c:choose>
-        
         </div>
         </div>
+        </div>
         
-    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

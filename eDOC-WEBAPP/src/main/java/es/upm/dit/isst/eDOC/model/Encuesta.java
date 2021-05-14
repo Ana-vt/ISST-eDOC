@@ -70,6 +70,26 @@ public class Encuesta implements Serializable {
 	@Lob
 	private String respuesta_Texto;
 	
+	private double media_Encuesta;
+	
+	//preguntas 1 y 2
+	private double media_Documentacion;
+	
+	//pregunta 3, 4, 5 y 6
+	private double media_Evaluacion;
+	
+	//pregunta 7,8,9,10,11 y 12
+	private double media_Estudiante;
+
+	//pregunta 13 y 14
+	private double media_Clases;
+
+	//pregunta 15 hasta la 23
+	private double media_Profesorado;
+	
+	//pregunta 24
+	private double media_Satisfaccion;
+	
 	public Encuesta(){}
 
 	public int getId() {
@@ -85,7 +105,7 @@ public class Encuesta implements Serializable {
 	}
 
 	public void setEntregada(boolean entregada) {
-		entregada = entregada;
+		this.entregada = entregada;
 	}
 
 	public Asignatura getAsignatura() {
@@ -308,6 +328,63 @@ public class Encuesta implements Serializable {
 		return serialVersionUID;
 	}
 
+	
+	public double getMedia_Encuesta() {
+		return media_Encuesta;
+	}
+
+	public void setMedia_Encuesta(double media_Encuesta) {
+		this.media_Encuesta = media_Encuesta;
+	}
+
+	public double getMedia_Documentacion() {
+		return media_Documentacion;
+	}
+
+	public void setMedia_Documentacion(double media_Documentacion) {
+		this.media_Documentacion = media_Documentacion;
+	}
+
+	public double getMedia_Evaluacion() {
+		return media_Evaluacion;
+	}
+
+	public void setMedia_Evaluacion(double media_Evaluacion) {
+		this.media_Evaluacion = media_Evaluacion;
+	}
+
+	public double getMedia_Estudiante() {
+		return media_Estudiante;
+	}
+
+	public void setMedia_Estudiante(double media_Estudiante) {
+		this.media_Estudiante = media_Estudiante;
+	}
+
+	public double getMedia_Clases() {
+		return media_Clases;
+	}
+
+	public void setMedia_Clases(double media_Clases) {
+		this.media_Clases = media_Clases;
+	}
+
+	public double getMedia_Profesorado() {
+		return media_Profesorado;
+	}
+
+	public void setMedia_Profesorado(double media_Profesorado) {
+		this.media_Profesorado = media_Profesorado;
+	}
+
+	public double getMedia_Satisfaccion() {
+		return media_Satisfaccion;
+	}
+
+	public void setMedia_Satisfaccion(double media_Satisfaccion) {
+		this.media_Satisfaccion = media_Satisfaccion;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -317,6 +394,20 @@ public class Encuesta implements Serializable {
 		result = prime * result + ((grupo == null) ? 0 : grupo.hashCode());
 		result = prime * result + id;
 		long temp;
+		temp = Double.doubleToLongBits(media_Clases);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(media_Documentacion);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(media_Encuesta);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(media_Estudiante);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(media_Evaluacion);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(media_Profesorado);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(media_Satisfaccion);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		temp = Double.doubleToLongBits(respuesta_Test1);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		temp = Double.doubleToLongBits(respuesta_Test10);
@@ -392,6 +483,20 @@ public class Encuesta implements Serializable {
 			return false;
 		if (id != other.id)
 			return false;
+		if (Double.doubleToLongBits(media_Clases) != Double.doubleToLongBits(other.media_Clases))
+			return false;
+		if (Double.doubleToLongBits(media_Documentacion) != Double.doubleToLongBits(other.media_Documentacion))
+			return false;
+		if (Double.doubleToLongBits(media_Encuesta) != Double.doubleToLongBits(other.media_Encuesta))
+			return false;
+		if (Double.doubleToLongBits(media_Estudiante) != Double.doubleToLongBits(other.media_Estudiante))
+			return false;
+		if (Double.doubleToLongBits(media_Evaluacion) != Double.doubleToLongBits(other.media_Evaluacion))
+			return false;
+		if (Double.doubleToLongBits(media_Profesorado) != Double.doubleToLongBits(other.media_Profesorado))
+			return false;
+		if (Double.doubleToLongBits(media_Satisfaccion) != Double.doubleToLongBits(other.media_Satisfaccion))
+			return false;
 		if (Double.doubleToLongBits(respuesta_Test1) != Double.doubleToLongBits(other.respuesta_Test1))
 			return false;
 		if (Double.doubleToLongBits(respuesta_Test10) != Double.doubleToLongBits(other.respuesta_Test10))
@@ -462,8 +567,12 @@ public class Encuesta implements Serializable {
 				+ ", respuesta_Test19=" + respuesta_Test19 + ", respuesta_Test20=" + respuesta_Test20
 				+ ", respuesta_Test21=" + respuesta_Test21 + ", respuesta_Test22=" + respuesta_Test22
 				+ ", respuesta_Test23=" + respuesta_Test23 + ", respuesta_Test24=" + respuesta_Test24
-				+ ", respuesta_Texto=" + respuesta_Texto + "]";
+				+ ", respuesta_Texto=" + respuesta_Texto + ", media_Encuesta=" + media_Encuesta
+				+ ", media_Documentacion=" + media_Documentacion + ", media_Evaluacion=" + media_Evaluacion
+				+ ", media_Estudiante=" + media_Estudiante + ", media_Clases=" + media_Clases + ", media_Profesorado="
+				+ media_Profesorado + ", media_Satisfaccion=" + media_Satisfaccion + "]";
 	}
 
+	
 	
 }
