@@ -35,7 +35,7 @@
                   <i class="fa fa-user-circle" aria-hidden="true">  <%= session.getAttribute("email_profesor") %></i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="FormLogoutServlet"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesión</a>
+                  <a class="dropdown-item" href="FormLogoutServlet"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesiÃ³n</a>
                 </div>
               </li>
             </ul>
@@ -75,16 +75,7 @@
             		<img src="static/img/alumnos.png" width="250" height="250" class="departamento" />
             	</c:otherwise>
             </c:choose>
-        </div>
-        <h3 class="encuestas">Encuestas respondidas</h3>
-        <div class="porcentaje">
-            <div class="progress-circle over50 p66">
-                <span>66%</span>
-                <div class="left-half-clipper">
-                    <div class="first50-bar"></div>
-                    <div class="value-bar"></div>
-                </div>
-            </div>
+        
         </div>
         </div>
         
