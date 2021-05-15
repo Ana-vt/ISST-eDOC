@@ -32,10 +32,10 @@
             <ul class="navbar-nav ml-auto">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-user-circle" aria-hidden="true">  Usuario root</i>
+                  <i class="fa fa-user-circle" aria-hidden="true">Usuario root</i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="index.html"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesión</a>
+                  <a class="dropdown-item" href="FormLogoutServlet"><i class="fa fa-sign-out-alt mr-2" aria-hidden="true"></i>Cerrar sesión</a>
                 </div>
               </li>
             </ul>

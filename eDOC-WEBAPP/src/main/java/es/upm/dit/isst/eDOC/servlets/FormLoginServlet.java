@@ -17,50 +17,74 @@ import org.glassfish.jersey.client.ClientConfig;
 import es.upm.dit.isst.eDOC.model.Encuesta;
 import es.upm.dit.isst.eDOC.model.Usuario;
 
-
 @WebServlet("/FormLoginServlet")
 public class FormLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final String ADMIN_EMAIL = "root";
-    private final String ADMIN_PASSWORD = "root"; 
-       
-    
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-                       throws ServletException, IOException {
-        String email = req.getParameter("email");
-        String password = req.getParameter("password");
-        Client client = ClientBuilder.newClient(new ClientConfig());
+	private final String ADMIN_PASSWORD = "root";
 
-        // autenticacion Gestor
-        if( ADMIN_EMAIL.equals(email) && ADMIN_PASSWORD.equals(password) ) {        
-             req.getSession().setAttribute("email_admin", true);
-             getServletContext().getRequestDispatcher("/gestor_inicio.jsp").forward(req, resp);
-            return;
-        }
-        
-        // autenticacion Alumno
-        if ( email.indexOf("@alumnos.upm.es") > -1) {
-                req.getSession().setAttribute("email_alumno", email);
-                getServletContext().getRequestDispatcher("/alumno_inicio.jsp").forward(req,resp);
-              return;
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String email = req.getParameter("email");
+		String password = req.getParameter("password");
+		String contraseña = "x";
 
-        }     
-        
-     // autenticacion Alumno
-        if ( email.indexOf("@upm.es") > -1) {
-                req.getSession().setAttribute("email_profesor", email);
-                
-                String departamento = client.target(URLHelperUsuarios.getURL()+ "/" + email)
-        				.request().accept(MediaType.APPLICATION_JSON).get(Usuario.class).getDepartamento();
-        		
-                req.getSession().setAttribute("departamento", departamento);
-                System.out.print(departamento);
-                
-                getServletContext().getRequestDispatcher("/profesor_inicio.jsp").forward(req,resp);
-              return;
+		Client client = ClientBuilder.newClient(new ClientConfig());
 
-        }     
-    }
+		List<Usuario> usuarios = client.target(URLHelperUsuarios.getURL()).request().accept(MediaType.APPLICATION_JSON)
+				.get(new GenericType<List<Usuario>>() {
+				});
+
+		for (Usuario user : usuarios) {
+			if (user.getEmail().equals(email)) {
+				contraseña = user.getPassword();
+			}
+		}
+
+		System.out.println(contraseña);
+
+		// autenticacion Gestor
+		if (ADMIN_EMAIL.equals(email) && ADMIN_PASSWORD.equals(password)) {
+			req.getSession().setAttribute("email_admin", true);
+			getServletContext().getRequestDispatcher("/gestor_inicio.jsp").forward(req, resp);
+			return;
+		}
+
+		// autenticacion Alumno
+		if (email.indexOf("@alumnos.upm.es") > -1) {
+			if(contraseña.equals(password)) {
+			req.getSession().setAttribute("email_alumno", email);
+			getServletContext().getRequestDispatcher("/alumno_inicio.jsp").forward(req, resp);
+			return;
+
+		}else {
+			getServletContext().getRequestDispatcher("/index.html").forward(req, resp);
+			return;
+			
+		}
+		}
+			 
+
+		// autenticacion Alumno
+		if (email.indexOf("@upm.es") > -1) {
+			if(contraseña.equals(password)) {
+			req.getSession().setAttribute("email_profesor", email);
+
+			String departamento = client.target(URLHelperUsuarios.getURL() + "/" + email).request()
+					.accept(MediaType.APPLICATION_JSON).get(Usuario.class).getDepartamento();
+
+			req.getSession().setAttribute("departamento", departamento);
+			// System.out.print(departamento);
+
+			getServletContext().getRequestDispatcher("/profesor_inicio.jsp").forward(req, resp);
+			return;
+
+		} else {
+			getServletContext().getRequestDispatcher("/index.html").forward(req, resp);
+			return;
+			
+		} 
+		}
+}
 }
